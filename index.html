@@ -11,7 +11,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:title" content="Wilmar Filliatre — Advance Immobilier (82 & 31)" />
-  <meta property="og:description" content="Même engagement, même transparence — découvrez mes biens sur Advance Immobilier, demandez un avis de valeur sur place ou devenez apporteur d'affaires." />
+  <meta property="og:description" content="Découvrez mes biens sur Advance Immobilier, consultez les avis clients Google, demandez un avis de valeur sur place ou devenez apporteur d'affaires." />
 
   <script type="application/ld+json">
   {
@@ -108,38 +108,56 @@
     .btn-luxury:hover {
       transform: translateY(-1px);
     }
+    .marquee-wrapper {
+      mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      gap: 1.75rem;
+      animation: defilementAvis 42s linear infinite;
+    }
+    .marquee-wrapper:hover .marquee-track {
+      animation-play-state: paused;
+    }
+    @keyframes defilementAvis {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
   </style>
 </head>
 <body class="selection:bg-or selection:text-obsidienne">
 
-  <!-- NAVIGATION ÉPURÉE -->
-  <header class="fixed top-0 inset-x-0 z-50 bg-obsidienne/80 backdrop-blur-xl border-b hairline">
+  <!-- NAVIGATION ÉPURÉE AVEC LOGO -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-obsidienne/85 backdrop-blur-xl border-b hairline">
     <div class="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
-      <!-- Signature Wilmar Filliatre (fidèle au visuel) -->
       <a href="#" class="flex items-center gap-3.5 group" aria-label="Accueil Wilmar Filliatre">
-        <svg class="w-11 h-7 text-ivoire group-hover:text-or transition duration-500" viewBox="0 0 120 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6 42L44 10L68 30L92 14L114 42" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M22 28V15H30V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <div class="leading-none">
-          <span class="block font-editorial text-xl tracking-wide text-ivoire">
-            <span class="italic font-normal">Wilmar</span> <span class="uppercase font-semibold tracking-[0.14em] text-base">Filliatre</span>
-          </span>
-          <span class="block text-[9px] uppercase tracking-[0.26em] text-brume mt-1">
-            Agent Commercial en Immobilier
-          </span>
+        <img src="logo.png" alt="Logo Wilmar Filliatre" class="h-11 w-auto object-contain" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+        <div class="hidden flex items-center gap-3.5">
+          <svg class="w-11 h-7 text-ivoire group-hover:text-or transition duration-500" viewBox="0 0 120 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 42L44 10L68 30L92 14L114 42" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 28V15H30V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="leading-none">
+            <span class="block font-editorial text-xl tracking-wide text-ivoire">
+              <span class="italic font-normal">Wilmar</span> <span class="uppercase font-semibold tracking-[0.14em] text-base">Filliatre</span>
+            </span>
+            <span class="block text-[9px] uppercase tracking-[0.26em] text-brume mt-1">
+              Agent Commercial en Immobilier
+            </span>
+          </div>
         </div>
       </a>
 
-      <!-- Navigation centrale -->
-      <nav class="hidden lg:flex items-center gap-10 text-[11px] uppercase tracking-[0.22em] text-brume">
+      <nav class="hidden lg:flex items-center gap-9 text-[11px] uppercase tracking-[0.22em] text-brume">
         <a href="#portefeuille" class="hover:text-ivoire transition">Portefeuille</a>
         <a href="#approche" class="hover:text-ivoire transition">L'Approche</a>
         <a href="#estimation" class="hover:text-ivoire transition">Avis de valeur</a>
         <a href="#apporteur" class="hover:text-ivoire transition">Apporteur d'affaires</a>
+        <a href="#avis-google" class="hover:text-ivoire transition">Avis Google</a>
       </nav>
 
-      <!-- Action directe -->
       <div class="flex items-center gap-5">
         <a href="tel:+33672031712" class="hidden sm:inline-block text-xs tracking-[0.14em] text-brume hover:text-or transition">
           06 72 03 17 12
@@ -151,11 +169,11 @@
     </div>
   </header>
 
-  <!-- OUVERTURE ARCHITECTURALE (INSPIRÉE DU VISUEL "UN NOUVEAU CHAPITRE") -->
+  <!-- OUVERTURE ARCHITECTURALE -->
   <section class="hero-backdrop min-h-screen flex flex-col justify-between pt-32 pb-12 px-6 lg:px-10 border-b hairline">
     <div class="my-auto max-w-4xl mx-auto text-center">
-      <p class="text-[11px] sm:text-xs uppercase tracking-[0.42em] text-ivoire/90 font-medium mb-7">
-        Un nouveau chapitre
+      <p class="text-[11px] sm:text-xs uppercase tracking-[0.36em] text-or font-medium mb-7">
+        Tarn-et-Garonne (82) &bull; Haute-Garonne (31)
       </p>
 
       <h1 class="font-editorial text-4xl sm:text-6xl md:text-7xl font-normal text-ivoire leading-[1.08] tracking-tight">
@@ -163,11 +181,10 @@
         <span class="italic text-ivoire/95">porté par la clarté et le conseil.</span>
       </h1>
 
-      <!-- Filet d'or signature -->
       <div class="w-40 sm:w-56 h-[2px] bg-or mx-auto my-8"></div>
 
       <p class="max-w-xl mx-auto text-base sm:text-lg text-ivoire/85 font-light leading-relaxed">
-        Même engagement, même transparence — une approche sur-mesure pour valoriser et concrétiser vos projets sur le <span class="text-ivoire font-normal">Tarn-et-Garonne (82)</span> et la <span class="text-ivoire font-normal">Haute-Garonne (31)</span>.
+        Une approche sur-mesure pour valoriser, vendre ou acquérir votre bien en toute sérénité entre <span class="text-ivoire font-normal">Montauban, Fabas</span> et l'ensemble de la <span class="text-ivoire font-normal">Haute-Garonne</span>.
       </p>
 
       <div class="mt-11 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -180,23 +197,25 @@
       </div>
     </div>
 
-    <!-- Bandeau bas fidèle à la composition du visuel -->
     <div class="max-w-7xl w-full mx-auto pt-8 border-t hairline flex flex-col sm:flex-row items-center justify-between gap-6">
       <div class="flex items-center gap-3.5">
-        <svg class="w-10 h-6 text-ivoire" viewBox="0 0 120 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6 42L44 10L68 30L92 14L114 42" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M22 28V15H30V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <div>
-          <p class="font-editorial text-lg leading-none text-ivoire">
-            <span class="italic">Wilmar</span> <span class="uppercase font-semibold tracking-[0.14em] text-sm">Filliatre</span>
-          </p>
-          <p class="text-[9px] uppercase tracking-[0.26em] text-brume mt-1">Agent Commercial en Immobilier</p>
+        <img src="logo.png" alt="Logo Wilmar Filliatre" class="h-12 w-auto object-contain" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+        <div class="hidden flex items-center gap-3.5">
+          <svg class="w-10 h-6 text-ivoire" viewBox="0 0 120 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 42L44 10L68 30L92 14L114 42" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 28V15H30V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div>
+            <p class="font-editorial text-lg leading-none text-ivoire">
+              <span class="italic">Wilmar</span> <span class="uppercase font-semibold tracking-[0.14em] text-sm">Filliatre</span>
+            </p>
+            <p class="text-[9px] uppercase tracking-[0.26em] text-brume mt-1">Agent Commercial en Immobilier</p>
+          </div>
         </div>
       </div>
 
       <p class="text-[10px] uppercase tracking-[0.28em] text-brume text-center">
-        Tarn-et-Garonne (82) &bull; Haute-Garonne (31)
+        RSAC Montauban 942 113 499
       </p>
 
       <div class="text-center sm:text-right">
@@ -206,7 +225,7 @@
     </div>
   </section>
 
-  <!-- PORTEFEUILLE OFFICIEL (BASCULE DIRECTE VERS ADVANCE IMMOBILIER) -->
+  <!-- PORTEFEUILLE OFFICIEL -->
   <section id="portefeuille" class="py-28 px-6 lg:px-10 border-b hairline bg-pierre">
     <div class="max-w-6xl mx-auto reveal">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -245,7 +264,7 @@
             </li>
             <li class="flex items-start gap-3.5">
               <span class="text-or mt-0.5">&mdash;</span>
-              <span><strong class="text-ivoire font-normal">Transparence totale :</strong> honoraires clairement affichés sur chaque fiche mandat.</span>
+              <span><strong class="text-ivoire font-normal">Clarté des honoraires :</strong> barèmes détaillés sur chaque fiche annonce.</span>
             </li>
           </ul>
         </div>
@@ -253,7 +272,7 @@
     </div>
   </section>
 
-  <!-- L'APPROCHE & IDENTITÉ DU CONSEILLER -->
+  <!-- L'APPROCHE -->
   <section id="approche" class="py-28 px-6 lg:px-10 border-b hairline bg-obsidienne">
     <div class="max-w-6xl mx-auto reveal">
       <div class="max-w-2xl mb-16">
@@ -461,8 +480,36 @@
     </div>
   </section>
 
-  <!-- LIGNE DIRECTE & PIED DE PAGE -->
-  <footer id="contact" class="bg-pierre pt-24 pb-12 px-6 lg:px-10">
+  <!-- RUBAN DÉFILANT DES AVIS GOOGLE MY BUSINESS EN BAS DE PAGE -->
+  <section id="avis-google" class="py-20 border-b hairline bg-pierre overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 lg:px-10 mb-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+      <div>
+        <p class="text-[11px] uppercase tracking-[0.3em] text-or mb-2">Recommandations vérifiées</p>
+        <div class="flex items-center gap-3.5">
+          <h2 class="font-editorial text-3xl sm:text-4xl font-normal text-ivoire">Avis clients Google</h2>
+          <span class="px-3 py-1 bg-obsidienne border hairline-gold text-xs text-or font-medium tracking-wider">
+            5,0 &#9733;
+          </span>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3">
+        <a href="https://www.google.com/search?sca_esv=825d62776290db59&sxsrf=AKL5yDiDqPfI_DjFrlupZUGWZNLeqvNdQw:1794612813350&q=avis+filliatre+wilmar&si=AE1YtOqiKPb2pdLXAi8quZ9vbH4aVq_aX8-3H9iFBLpRNK95czf49v5SihdLU-Gc-BFPq3odj0ORmnt8VIgYPj0-xZpLA8WrMF8yCfhWGGOW7SmALRWlxoI%3D&uds=AE2AFgZ2jEs7pfCtrwfpxOWhzAe2u_x7x2hCs08QdAjSY2bbdxp-KOJrmfY5KSgZuwner-VV5Lj9ZqniJkgPKpy3ANnAW_jpiw9ybxKpLVdRv-gUml9QdR_9XcIUOD2o0Q_9FCkGv32-&sa=X&ved=2ahUKEwi91_7ZjYaYAxUBVaQEHS3SAEoQ3PALegQIJRAF&biw=1470&bih=835&dpr=2" target="_blank" rel="noopener noreferrer" class="btn-luxury px-5 py-2.5 border hairline text-ivoire text-[11px] uppercase tracking-[0.18em] hover:border-or hover:text-or">
+          Tous les avis Google &rarr;
+        </a>
+        <a href="https://www.google.com/search?sca_esv=825d62776290db59&sxsrf=AKL5yDiDqPfI_DjFrlupZUGWZNLeqvNdQw:1794612813350&q=avis+filliatre+wilmar&si=AE1YtOqiKPb2pdLXAi8quZ9vbH4aVq_aX8-3H9iFBLpRNK95czf49v5SihdLU-Gc-BFPq3odj0ORmnt8VIgYPj0-xZpLA8WrMF8yCfhWGGOW7SmALRWlxoI%3D&uds=AE2AFgZ2jEs7pfCtrwfpxOWhzAe2u_x7x2hCs08QdAjSY2bbdxp-KOJrmfY5KSgZuwner-VV5Lj9ZqniJkgPKpy3ANnAW_jpiw9ybxKpLVdRv-gUml9QdR_9XcIUOD2o0Q_9FCkGv32-&sa=X&ved=2ahUKEwi91_7ZjYaYAxUBVaQEHS3SAEoQ3PALegQIJRAF&biw=1470&bih=835&dpr=2" target="_blank" rel="noopener noreferrer" class="btn-luxury px-5 py-2.5 border hairline-gold text-or text-[11px] uppercase tracking-[0.18em] hover:bg-or hover:text-obsidienne">
+          Déposer un avis
+        </a>
+      </div>
+    </div>
+
+    <div class="marquee-wrapper w-full py-2">
+      <div id="piste-avis-google" class="marquee-track"></div>
+    </div>
+  </section>
+
+  <!-- LIGNE DIRECTE & PIED DE PAGE AVEC LOGO -->
+  <footer id="contact" class="bg-obsidienne pt-24 pb-12 px-6 lg:px-10">
     <div class="max-w-6xl mx-auto">
       <div class="flex flex-col lg:flex-row lg:items-end justify-between pb-16 border-b hairline gap-10">
         <div>
@@ -491,25 +538,27 @@
         </div>
       </div>
 
-      <!-- Signature finale fidèle au visuel -->
       <div class="pt-10 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-brume">
         <div class="flex items-center gap-3.5">
-          <svg class="w-10 h-6 text-ivoire" viewBox="0 0 120 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 42L44 10L68 30L92 14L114 42" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M22 28V15H30V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <div>
-            <p class="font-editorial text-lg leading-none text-ivoire">
-              <span class="italic">Wilmar</span> <span class="uppercase font-semibold tracking-[0.14em] text-sm">Filliatre</span>
-            </p>
-            <p class="text-[9px] uppercase tracking-[0.24em] text-brume mt-1">
-              Agent Commercial en Immobilier &bull; RSAC Montauban 942 113 499
-            </p>
+          <img src="logo.png" alt="Logo Wilmar Filliatre" class="h-11 w-auto object-contain" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+          <div class="hidden flex items-center gap-3.5">
+            <svg class="w-10 h-6 text-ivoire" viewBox="0 0 120 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 42L44 10L68 30L92 14L114 42" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M22 28V15H30V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div>
+              <p class="font-editorial text-lg leading-none text-ivoire">
+                <span class="italic">Wilmar</span> <span class="uppercase font-semibold tracking-[0.14em] text-sm">Filliatre</span>
+              </p>
+              <p class="text-[9px] uppercase tracking-[0.24em] text-brume mt-1">
+                Agent Commercial en Immobilier &bull; RSAC Montauban 942 113 499
+              </p>
+            </div>
           </div>
         </div>
 
         <p class="text-center text-[11px] text-brume/80">
-          Honoraires à la charge de l'acquéreur sauf mention contraire.
+          RSAC Montauban 942 113 499 &bull; Honoraires à la charge de l'acquéreur sauf mention contraire.
         </p>
 
         <div class="text-center md:text-right">
@@ -521,7 +570,79 @@
   </footer>
 
   <script>
-    // Apparition fluide des sections au défilement
+    const AVIS_SECOURS = [
+      {
+        auteur: "Client Vendeur",
+        secteur: "Fabas (82)",
+        texte: "Un accompagnement irréprochable du début à la fin. Très grande disponibilité, écoute attentive et conseils justes pour la mise en vente de notre maison."
+      },
+      {
+        auteur: "Client Acquéreur",
+        secteur: "Fronton (31)",
+        texte: "Professionnalisme, réactivité et suivi sérieux à chaque étape jusqu'à la signature chez le notaire. Je recommande Wilmar Filliatre sans hésitation."
+      },
+      {
+        auteur: "Client Vendeur",
+        secteur: "Montauban (82)",
+        texte: "Estimation précise et réaliste du marché local, comptes rendus réguliers après chaque visite et vente concrétisée dans les meilleurs délais."
+      },
+      {
+        auteur: "Client Acquéreur",
+        secteur: "Castelginest (31)",
+        texte: "Un conseiller à l'écoute qui connaît parfaitement son secteur et prend le temps de sécuriser chaque détail du projet immobilier."
+      }
+    ];
+
+    function echapperHtml(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function afficherBandeauAvis(listeAvis) {
+      const piste = document.getElementById('piste-avis-google');
+      if (!piste || !listeAvis.length) return;
+      const listeDouble = [...listeAvis, ...listeAvis];
+      piste.innerHTML = listeDouble.map(avis => `
+        <article class="w-[330px] sm:w-[390px] shrink-0 bg-obsidienne border hairline p-7 flex flex-col justify-between hover:border-or/50 transition">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-1 text-or text-xs" aria-label="5 étoiles">
+                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+              </div>
+              <span class="text-[9px] uppercase tracking-[0.22em] text-brume">Avis Google</span>
+            </div>
+            <p class="text-sm text-ivoire/90 font-light leading-relaxed italic">
+              « ${echapperHtml(avis.texte)} »
+            </p>
+          </div>
+          <div class="mt-6 pt-3.5 border-t hairline flex items-center justify-between text-xs">
+            <span class="text-ivoire font-medium">${echapperHtml(avis.auteur)}</span>
+            <span class="text-brume">${echapperHtml(avis.secteur || 'Google My Business')}</span>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    async function chargerAvisGoogle() {
+      try {
+        const resp = await fetch('avis_google.json?t=' + Date.now());
+        if (!resp.ok) throw new Error('JSON non trouvé');
+        const data = await resp.json();
+        if (Array.isArray(data.avis) && data.avis.length > 0) {
+          afficherBandeauAvis(data.avis);
+          return;
+        }
+      } catch (e) {
+        // Repli transparent sur les avis de secours
+      }
+      afficherBandeauAvis(AVIS_SECOURS);
+    }
+
+    chargerAvisGoogle();
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -533,7 +654,6 @@
 
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-    // Envoi direct vers la messagerie
     function envoyerVersMessagerie(sujet, corps) {
       const destinataire = 'wfilliatre@advance-immobilier.com';
       window.location.href = `mailto:${destinataire}?subject=${encodeURIComponent(sujet)}&body=${encodeURIComponent(corps)}`;
