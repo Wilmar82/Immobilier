@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """
 Synchronisation automatique des vrais biens à la vente et à la location
-depuis la page officielle Advance Immobilier de Wilmar Filliatre.
-Génère biens_advance.json à la racine du site vitrine.
+depuis la page officielle Advance Immobilier de Wilmar Filliatre (via Playwright).
 """
 
 import json
@@ -10,20 +9,12 @@ import re
 from datetime import datetime
 from urllib.parse import urljoin
 
-import requests
 from bs4 import BeautifulSoup
+from playwright.sync_api import sync_playwright
 
 URLS_CONSEILLERS = [
     "https://www.advance-immobilier.com/contributor/person/wilmar-filliatre",
 ]
-
-HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-    ),
-    "Accept-Language": "fr-FR,fr;q=0.9",
-}
 
 FICHIER_SORTIE = "biens_advance.json"
 
@@ -32,66 +23,52 @@ def nettoyer_texte(txt):
     return re.sub(r"\s+", " ", str(txt or "")).strip()
 
 
-def extraire_biens_page(url_source):
+def extraire_biens_playwright(url_source):
     biens = []
-    try:
-        resp = requests.get(url_source, headers=HEADERS, timeout=20)
-        resp.raise_for_status()
-    except Exception as e:
-        print(f"Erreur lecture {url_source} : {e}")
-        return biens
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        context = browser.new_context(
+            user_agent=(
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+            ),
+            locale="fr-FR",
+            viewport={"width": 1366, "height": 900},
+        )
+        page = context.new_page()
+        page.goto(url_source, wait_until="networkidle", timeout=60000)
+        page.wait_for_timeout(3000)
 
-    soup = BeautifulSoup(resp.text, "html.parser")
+        # Défilement pour déclencher le chargement des images et cartes
+        page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+        page.wait_for_timeout(2000)
 
-    for script in soup.find_all("script", type="application/ld+json"):
-        try:
-            data = json.loads(script.string or "{}")
-            items = data if isinstance(data, list) else [data]
-            for item in items:
-                if "@graph" in item:
-                    items.extend(item["@graph"])
-                if item.get("@type") in ("RealEstateListing", "Product", "Residence", "House", "Apartment"):
-                    lien = urljoin(url_source, item.get("url", ""))
-                    if not lien or lien == url_source:
-                        continue
-                    offers = item.get("offers", {}) if isinstance(item.get("offers"), dict) else {}
-                    prix_val = offers.get("price")
-                    prix = f"{int(float(prix_val)):,} €".replace(",", " ") if prix_val else ""
-                    img = item.get("image", "")
-                    if isinstance(img, list):
-                        img = img[0] if img else ""
-                    biens.append({
-                        "titre": nettoyer_texte(item.get("name")),
-                        "ville": nettoyer_texte(item.get("address", {}).get("addressLocality") if isinstance(item.get("address"), dict) else ""),
-                        "cp": nettoyer_texte(item.get("address", {}).get("postalCode") if isinstance(item.get("address"), dict) else ""),
-                        "prix": prix,
-                        "transaction": "location" if "/location" in lien.lower() or "cc" in prix.lower() else "vente",
-                        "surface": "",
-                        "pieces": "",
-                        "dpe": "",
-                        "image": urljoin(url_source, img) if img else "",
-                        "url": lien,
-                    })
-        except Exception:
-            pass
+        html = page.content()
+        browser.close()
 
-    if biens:
-        return biens
+    soup = BeautifulSoup(html, "html.parser")
 
+    # 1. Recherche des liens d'annonces sur la page
     liens_annonces = []
     for a in soup.find_all("a", href=True):
         href = a["href"]
-        if any(seg in href.lower() for seg in ("/annonce", "/bien", "/vente/", "/location/", "/property/")):
+        if any(
+            seg in href.lower()
+            for seg in ("/annonce", "/bien", "/vente/", "/location/", "/property/", "/detail")
+        ):
             lien_complet = urljoin(url_source, href)
             if lien_complet not in liens_annonces and lien_complet != url_source:
                 liens_annonces.append(lien_complet)
 
     for lien in liens_annonces:
         a_tag = soup.find("a", href=lambda h: h and urljoin(url_source, h) == lien)
-        carte = a_tag.find_parent(["article", "div", "li"]) if a_tag else None
-        texte_carte = nettoyer_texte(carte.get_text(" ")) if carte else nettoyer_texte(a_tag.get_text(" "))
+        carte = a_tag.find_parent(["article", "li", "div"]) if a_tag else None
+        # Remonter d'un niveau si la carte est trop petite
+        if carte and len(nettoyer_texte(carte.get_text(" "))) < 25 and carte.parent:
+            carte = carte.parent
 
-        if len(texte_carte) < 10:
+        texte_carte = nettoyer_texte(carte.get_text(" ")) if carte else nettoyer_texte(a_tag.get_text(" "))
+        if len(texte_carte) < 12:
             continue
 
         if re.search(r"\b(vendu|sous\s+compromis|lou[ée])\b", texte_carte, re.IGNORECASE):
@@ -116,7 +93,7 @@ def extraire_biens_page(url_source):
         img_tag = carte.find("img") if carte else None
         img_url = ""
         if img_tag:
-            src = img_tag.get("data-src") or img_tag.get("src") or ""
+            src = img_tag.get("data-src") or img_tag.get("data-lazy-src") or img_tag.get("src") or ""
             if src and not src.startswith("data:"):
                 img_url = urljoin(url_source, src)
 
@@ -148,7 +125,7 @@ def main():
     urls_vues = set()
 
     for url in URLS_CONSEILLERS:
-        for bien in extraire_biens_page(url):
+        for bien in extraire_biens_playwright(url):
             if bien["url"] not in urls_vues:
                 urls_vues.add(bien["url"])
                 tous_biens.append(bien)
