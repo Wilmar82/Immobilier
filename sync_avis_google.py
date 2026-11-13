@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Extraction quotidienne des avis Google Business Profile de Wilmar Filliatre
-vers avis_google.json pour le bandeau défilant du site vitrine.
+Extraction mot pour mot des avis Google Business Profile de Wilmar Filliatre
+vers avis_google.json.
 """
 
 import json
@@ -21,10 +21,6 @@ URL_AVIS_GOOGLE = (
 FICHIER_SORTIE = "avis_google.json"
 
 
-def nettoyer(txt):
-    return re.sub(r"\s+", " ", str(txt or "")).strip()
-
-
 def main():
     avis_extraits = []
 
@@ -42,9 +38,8 @@ def main():
 
         try:
             page.goto(URL_AVIS_GOOGLE, wait_until="networkidle", timeout=60000)
-            page.wait_for_timeout(2500)
+            page.wait_for_timeout(3000)
 
-            # Accepter les cookies Google si la bannière apparaît
             for label in ("Tout accepter", "J'accepte", "Accept all"):
                 btn = page.locator(f"button:has-text('{label}')")
                 if btn.count() > 0:
@@ -55,38 +50,27 @@ def main():
                     except Exception:
                         pass
 
-            # Déplier les avis tronqués ("Plus")
-            for btn_plus in page.locator("a:has-text('Plus'), button:has-text('Plus')").all()[:15]:
+            # Déplier intégralement tous les avis tronqués ("Plus")
+            for btn_plus in page.locator("a:has-text('Plus'), button:has-text('Plus')").all()[:20]:
                 try:
                     btn_plus.click()
                     page.wait_for_timeout(300)
                 except Exception:
                     pass
 
-            # Extraction des blocs d'avis Google
             blocs = page.locator("[data-review-id], .gws-localreviews__google-review").all()
             vus = set()
 
             for bloc in blocs:
                 try:
-                    texte_bloc = nettoyer(bloc.inner_text())
-                    if len(texte_bloc) < 25:
-                        continue
-
-                    # Auteur
                     auteur_el = bloc.locator("a[href*='contrib'], .TSUbDb, .Vpc5Fe").first
-                    auteur = nettoyer(auteur_el.inner_text()) if auteur_el.count() > 0 else "Client Google"
-                    auteur = re.sub(r"\d+\s+avis.*", "", auteur, flags=re.IGNORECASE).strip() or "Client Google"
+                    auteur = auteur_el.inner_text().strip() if auteur_el.count() > 0 else "Client Google"
+                    auteur = auteur.split("\n")[0].strip() or "Client Google"
 
-                    # Texte de l'avis
-                    texte_el = bloc.locator(".Jtu6Td, .wiI7pd, span[data-expandable-section]").first
-                    commentaire = nettoyer(texte_el.inner_text()) if texte_el.count() > 0 else ""
+                    texte_el = bloc.locator("span[data-expandable-section], .wiI7pd, .Jtu6Td").first
+                    commentaire = texte_el.inner_text().strip() if texte_el.count() > 0 else ""
 
-                    # Nettoyage des préfixes/suffixes parasites
-                    commentaire = re.sub(r"^Visité en.*?\s+", "", commentaire).strip()
-                    commentaire = re.sub(r"\s*J'aime\s*Partager.*$", "", commentaire).strip()
-
-                    if len(commentaire) < 15 or commentaire in vus:
+                    if len(commentaire) < 10 or commentaire in vus:
                         continue
 
                     vus.add(commentaire)
@@ -99,7 +83,7 @@ def main():
                     continue
 
         except Exception as e:
-            print(f"Erreur lors de l'accès à Google : {e}")
+            print(f"Erreur accès Google : {e}")
         finally:
             browser.close()
 
@@ -111,9 +95,9 @@ def main():
         }
         with open(FICHIER_SORTIE, "w", encoding="utf-8") as f:
             json.dump(payload, f, ensure_ascii=False, indent=2)
-        print(f"{len(avis_extraits)} avis enregistré(s) dans {FICHIER_SORTIE}.")
+        print(f"{len(avis_extraits)} avis enregistré(s) mot pour mot.")
     else:
-        print("Aucun nouvel avis extrait (conservation de l'existant).")
+        print("Aucun avis récupéré depuis Google (blocage anti-bot).")
 
 
 if __name__ == "__main__":
