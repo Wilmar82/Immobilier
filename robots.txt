@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://wilmar82.github.io/immobilier/sitemap.xml
