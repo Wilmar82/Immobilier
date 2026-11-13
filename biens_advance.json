@@ -1,5 +1,138 @@
 {
-  "mis_a_jour": "13/11/2026 à 21:15",
-  "total": 0,
-  "biens": []
+  "mis_a_jour": "13/11/2026 à 22:11",
+  "total": 11,
+  "biens": [
+    {
+      "titre": "Location",
+      "ville": "Balma",
+      "cp": "31130",
+      "prix": "45 €",
+      "transaction": "location",
+      "surface": "43 m²",
+      "pieces": "2 pièces",
+      "dpe": "",
+      "image": "https://lead.as15847.net/cache/image/800x800/0000/0022/222464.jpeg",
+      "url": "https://www.advance-immobilier.com/location"
+    },
+    {
+      "titre": "Appartement 2 pièces – 87 m² – Albi, Hypercentre",
+      "ville": "Balma",
+      "cp": "31130",
+      "prix": "151 200 € (Honoraires : 11 200 € TTC (8 % TTC à la charge de l'acquéreur) Copropriété : 4 lots principaux – Syndic bénévole – 0 € de charges mensuelles)",
+      "transaction": "vente",
+      "surface": "87 m²",
+      "pieces": "2 pièces",
+      "dpe": "D",
+      "image": "https://lead.as15847.net/cache/image/1200x667/0000/0022/222799.jpeg",
+      "url": "https://www.advance-immobilier.com/achat/appartement-2-pieces-87-m2-albi-hypercentre-va37003"
+    },
+    {
+      "titre": "Appartement 3 pièces – 60 m² – Balma",
+      "ville": "Balma",
+      "cp": "31130",
+      "prix": "3 239 990 € (Honoraires de 6,66 % TTC à la charge de l’acquéreur)",
+      "transaction": "vente",
+      "surface": "60 m²",
+      "pieces": "3 pièces",
+      "dpe": "C",
+      "image": "https://lead.as15847.net/cache/image/1200x667/0000/0022/222651.jpeg",
+      "url": "https://www.advance-immobilier.com/achat/appartement-3-pieces-60-m2-balma-va36942"
+    },
+    {
+      "titre": "Maison 12 pièces – 395 m² – Orgueil",
+      "ville": "Balma",
+      "cp": "31130",
+      "prix": "719 000 € (Honoraires : 20 000 € TTC à la charge de l'acquéreur) 💡 LE PLUS FINANCIER ADVANCE IMMOBILIER : Achetez plus malin ! Grâce à nos hono)",
+      "transaction": "vente",
+      "surface": "395 m²",
+      "pieces": "12 pièces",
+      "dpe": "",
+      "image": "https://lead.as15847.net/cache/image/1200x667/0000/0022/223678.jpeg",
+      "url": "https://www.advance-immobilier.com/achat/maison-12-pieces-395-m2-orgueil-vm17188"
+    },
+    {
+      "titre": "Maison 4 pièces – 150 m² – Verdun-sur-Garonne",
+      "ville": "Balma",
+      "cp": "31130",
+      "prix": "118 800 € (Honoraires 8 800 € Honoraires acquéreur 8 800 € Honoraires à la charge de Acquéreur Prix net vendeur 110 000 € Mandat Référence 7597346 43 Av)",
+      "transaction": "vente",
+      "surface": "150 m²",
+      "pieces": "4 pièces",
+      "dpe": "",
+      "image": "https://lead.as15847.net/cache/image/1200x667/0000/0022/223570.jpeg",
+      "url": "https://www.advance-immobilier.com/achat/maison-4-pieces-150-m2-verdun-sur-garonne-vm17062"
+    },
+    {
+      "titre": "Terrain – Bondigoux",
+      "ville": "Balma",
+      "cp": "31130",
+      "prix": "99 000 € (Honoraires 8 000 € Honoraires acquéreur 8 000 € Honoraires à la charge de Acquéreur Prix net vendeur 91 000 € Mandat Référence 7676790 43 Av)",
+      "transaction": "vente",
+      "surface": "336 m²",
+      "pieces": "",
+      "dpe": "",
+      "image": "https://lead.as15847.net/cache/image/1200x667/0000/0022/225554.jpeg",
+      "url": "https://www.advance-immobilier.com/achat/terrain-bondigoux-vt1692"
+    },
+    {
+      "titre": "Terrain – Bondigoux",
+      "ville": "Balma",
+      "cp": "31130",
+      "prix": "99 000 € (Honoraires 8 000 € Honoraires acquéreur 8 000 € Honoraires à la charge de Acquéreur Prix net vendeur 91 000 € Mandat Référence 7676789 43 Av)",
+      "transaction": "vente",
+      "surface": "340 m²",
+      "pieces": "",
+      "dpe": "",
+      "image": "https://lead.as15847.net/cache/image/1200x667/0000/0022/225552.jpeg",
+      "url": "https://www.advance-immobilier.com/achat/terrain-bondigoux-vt1690"
+    },
+    {
+      "titre": "Terrain – Castelnau-d'Estrétefonds",
+      "ville": "Balma",
+      "cp": "31130",
+      "prix": "79 570 € (Honoraires d’agence : 6 570 € TTC (à la charge de l’acquéreur) 🏷️ Prix FAI : 79 570 € ℹ️ À noter : les frais de notaire sont calculés sur le)",
+      "transaction": "vente",
+      "surface": "430 m²",
+      "pieces": "",
+      "dpe": "",
+      "image": "https://lead.as15847.net/cache/image/1200x667/0000/0022/225574.jpeg",
+      "url": "https://www.advance-immobilier.com/achat/terrain-castelnau-d-estretefonds-vt1724"
+    },
+    {
+      "titre": "Terrain – Fronton",
+      "ville": "Balma",
+      "cp": "31130",
+      "prix": "86 110 € (Honoraires à la charge de l'acquéreur) Contact : Pour le dossier complet, le plan de bornage ou une visite du terrain)",
+      "transaction": "vente",
+      "surface": "465 m²",
+      "pieces": "",
+      "dpe": "",
+      "image": "https://lead.as15847.net/cache/image/1200x667/0000/0022/225599.jpeg",
+      "url": "https://www.advance-immobilier.com/achat/terrain-fronton-vt1749"
+    },
+    {
+      "titre": "Terrain – Saubens",
+      "ville": "Balma",
+      "cp": "31130",
+      "prix": "149 000 € (honoraires à la charge de l'acquéreur permettent d'optimiser et de réduire le calcul des frais de notaire)",
+      "transaction": "vente",
+      "surface": "684 m²",
+      "pieces": "",
+      "dpe": "",
+      "image": "https://lead.as15847.net/cache/image/1200x667/0000/0022/225563.jpeg",
+      "url": "https://www.advance-immobilier.com/achat/terrain-saubens-vt1716"
+    },
+    {
+      "titre": "Maison 5 pièces – 130 m² – Verdun-sur-Garonne",
+      "ville": "Balma",
+      "cp": "31130",
+      "prix": "318 000 € (Honoraires : 18 000 € TTC à la charge de l'acquéreur)",
+      "transaction": "vente",
+      "surface": "130 m²",
+      "pieces": "5 pièces",
+      "dpe": "",
+      "image": "https://lead.as15847.net/cache/image/1200x667/0000/0023/236207.jpeg",
+      "url": "https://www.advance-immobilier.com/achat/maison-5-pieces-130-m2-verdun-sur-garonne-vm17248"
+    }
+  ]
 }
