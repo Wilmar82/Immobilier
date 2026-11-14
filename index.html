@@ -116,7 +116,7 @@
       display: flex;
       width: max-content;
       gap: 1.75rem;
-      animation: defilementAvis 42s linear infinite;
+      animation: defilementAvis 48s linear infinite;
     }
     .marquee-wrapper:hover .marquee-track {
       animation-play-state: paused;
@@ -488,7 +488,7 @@
         <div class="flex items-center gap-3.5">
           <h2 class="font-editorial text-3xl sm:text-4xl font-normal text-ivoire">Avis clients Google</h2>
           <span class="px-3 py-1 bg-obsidienne border hairline-gold text-xs text-or font-medium tracking-wider">
-            5,0 &#9733;
+            5,0 &#9733; &bull; 8 avis
           </span>
         </div>
       </div>
@@ -620,7 +620,7 @@
           </div>
           <div class="mt-6 pt-3.5 border-t hairline flex items-center justify-between text-xs">
             <span class="text-ivoire font-medium">${echapperHtml(avis.auteur)}</span>
-            <span class="text-brume">${echapperHtml(avis.secteur || 'Google My Business')}</span>
+            <span class="text-brume">${echapperHtml(avis.secteur || 'Avis Google')}</span>
           </div>
         </article>
       `).join('');
@@ -636,7 +636,7 @@
           return;
         }
       } catch (e) {
-        // Repli transparent sur les avis de secours
+        // Repli transparent si avis_google.json n'est pas encore créé
       }
       afficherBandeauAvis(AVIS_SECOURS);
     }
