@@ -1,31 +1,721 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- Vérification Google Search Console -->
+  <title>Wilmar Filliatre — Advance Immobilier | Tarn-et-Garonne (82) & Haute-Garonne (31)</title>
+  <meta name="description" content="Wilmar Filliatre, Agent Commercial en Immobilier — Advance Immobilier. Biens d'exception et résidentiels en Tarn-et-Garonne (82) et Haute-Garonne (31), avis de valeur sur place et programme d'apporteur d'affaires." />
+  <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content="Y6Zv5T_F_Ahdk9fZzptwKYVtAgkZOFZ1aZnngQchVyw" />
-
-  <!-- Titre, Description et URL canonique -->
-  <title>Advance Immobilier (82 &amp; 31) - Wilmar Filliatre</title>
-  <meta name="description" content="Wilmar Filliatre, Conseiller Immobilier Indépendant (EI) - Réseau Advance Immobilier en Tarn-et-Garonne (82) et Haute-Garonne (31). Estimation, achat et vente." />
   <link rel="canonical" href="https://wilmar-filliatre.fr/" />
+<meta property="og:url" content="https://wilmar-filliatre.fr/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="Wilmar Filliatre — Advance Immobilier (82 & 31)" />
+  <meta property="og:description" content="Découvrez mes biens sur Advance Immobilier, consultez les avis clients Google (5,0/5), demandez un avis de valeur sur place ou devenez apporteur d'affaires." />
 
-  <!-- Données structurées pour afficher "Wilmar Filliatre" dans Google -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Wilmar Filliatre - Advance Immobilier",
-    "alternateName": "Wilmar Filliatre",
-    "url": "https://wilmar-filliatre.fr/"
+    "@type": "RealEstateAgent",
+    "name": "Wilmar Filliatre — Advance Immobilier",
+    "jobTitle": "Agent Commercial en Immobilier",
+    "description": "Accompagnement immobilier sur-mesure en Tarn-et-Garonne (82) et Haute-Garonne (31) : vente, location, avis de valeur sur place et indication d'affaires.",
+    "telephone": "+33672031712",
+    "email": "wfilliatre@advance-immobilier.com",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "8",
+      "bestRating": "5"
+    },
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Tarn-et-Garonne" },
+      { "@type": "AdministrativeArea", "name": "Haute-Garonne" },
+      { "@type": "City", "name": "Fabas" },
+      { "@type": "City", "name": "Montauban" },
+      { "@type": "City", "name": "Fronton" },
+      { "@type": "City", "name": "Toulouse" },
+      { "@type": "City", "name": "Castelginest" }
+    ],
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Advance Immobilier",
+      "award": "TOP 100 Immobilier Excellence 2026"
+    }
   }
   </script>
 
-  <!-- Conservez ici vos liens CSS, polices ou scripts existants -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidienne: '#0B0D10',
+            pierre: '#13161C',
+            basalte: '#1A1E26',
+            ivoire: '#F5F3EE',
+            brume: '#A3A8B3',
+            or: '#C59B4B',
+            orclair: '#DFBA73',
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+    body {
+      background-color: #0B0D10;
+      color: #F5F3EE;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    .font-editorial {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+    .hairline {
+      border-color: rgba(245, 243, 238, 0.11);
+    }
+    .hairline-gold {
+      border-color: rgba(197, 155, 75, 0.35);
+    }
+    .hero-backdrop {
+      background-image:
+        linear-gradient(180deg, rgba(11, 13, 16, 0.72) 0%, rgba(11, 13, 16, 0.80) 55%, #0B0D10 100%),
+        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85');
+      background-size: cover;
+      background-position: center;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .btn-luxury {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-luxury:hover {
+      transform: translateY(-1px);
+    }
+    .marquee-wrapper {
+      mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      gap: 1.75rem;
+      animation: defilementAvis 65s linear infinite;
+    }
+    .marquee-wrapper:hover .marquee-track {
+      animation-play-state: paused;
+    }
+    @keyframes defilementAvis {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+  </style>
 </head>
-<body>
-  <!-- Conservez ici tout le contenu actuel de votre page -->
+<body class="selection:bg-or selection:text-obsidienne">
+
+  <!-- NAVIGATION ÉPURÉE AVEC LOGO -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-obsidienne/85 backdrop-blur-xl border-b hairline">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3.5 group" aria-label="Accueil Wilmar Filliatre">
+        <img src="logo.png" alt="Logo Wilmar Filliatre" class="h-11 w-auto object-contain" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+        <div class="hidden flex items-center gap-3.5">
+          <svg class="w-11 h-7 text-ivoire group-hover:text-or transition duration-500" viewBox="0 0 120 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 42L44 10L68 30L92 14L114 42" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 28V15H30V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="leading-none">
+            <span class="block font-editorial text-xl tracking-wide text-ivoire">
+              <span class="italic font-normal">Wilmar</span> <span class="uppercase font-semibold tracking-[0.14em] text-base">Filliatre</span>
+            </span>
+            <span class="block text-[9px] uppercase tracking-[0.26em] text-brume mt-1">
+              Agent Commercial en Immobilier
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-9 text-[11px] uppercase tracking-[0.22em] text-brume">
+        <a href="#portefeuille" class="hover:text-ivoire transition">Portefeuille</a>
+        <a href="#approche" class="hover:text-ivoire transition">L'Approche</a>
+        <a href="#estimation" class="hover:text-ivoire transition">Avis de valeur</a>
+        <a href="#apporteur" class="hover:text-ivoire transition">Apporteur d'affaires</a>
+        <a href="#avis-google" class="hover:text-ivoire transition">Avis Google</a>
+      </nav>
+
+      <div class="flex items-center gap-5">
+        <a href="tel:+33672031712" class="hidden sm:inline-block text-xs tracking-[0.14em] text-brume hover:text-or transition">
+          06 72 03 17 12
+        </a>
+        <a href="#contact" class="btn-luxury px-5 py-2.5 border hairline-gold text-or text-[11px] uppercase tracking-[0.2em] hover:bg-or hover:text-obsidienne">
+          Contact privé
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- OUVERTURE ARCHITECTURALE -->
+  <section class="hero-backdrop min-h-screen flex flex-col justify-between pt-32 pb-12 px-6 lg:px-10 border-b hairline">
+    <div class="my-auto max-w-4xl mx-auto text-center">
+      <p class="text-[11px] sm:text-xs uppercase tracking-[0.36em] text-or font-medium mb-7">
+        Tarn-et-Garonne (82) &bull; Haute-Garonne (31)
+      </p>
+
+      <h1 class="font-editorial text-4xl sm:text-6xl md:text-7xl font-normal text-ivoire leading-[1.08] tracking-tight">
+        L'immobilier d'exigence,<br />
+        <span class="italic text-ivoire/95">porté par la clarté et le conseil.</span>
+      </h1>
+
+      <div class="w-40 sm:w-56 h-[2px] bg-or mx-auto my-8"></div>
+
+      <p class="max-w-xl mx-auto text-base sm:text-lg text-ivoire/85 font-light leading-relaxed">
+        Une approche sur-mesure pour valoriser, vendre ou acquérir votre bien en toute sérénité entre <span class="text-ivoire font-normal">Montauban, Fabas</span> et l'ensemble de la <span class="text-ivoire font-normal">Haute-Garonne</span>.
+      </p>
+
+      <div class="mt-11 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://www.advance-immobilier.com/contributor/person/wilmar-filliatre" target="_blank" rel="noopener noreferrer" class="btn-luxury w-full sm:w-auto px-9 py-4 bg-or text-obsidienne font-medium text-xs uppercase tracking-[0.22em] hover:bg-orclair">
+          Découvrir mes biens sur Advance &rarr;
+        </a>
+        <a href="#estimation" class="btn-luxury w-full sm:w-auto px-9 py-4 border hairline text-ivoire text-xs uppercase tracking-[0.22em] hover:border-or hover:text-or">
+          Demander un avis de valeur
+        </a>
+      </div>
+    </div>
+
+    <div class="max-w-7xl w-full mx-auto pt-8 border-t hairline flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3.5">
+        <img src="logo.png" alt="Logo Wilmar Filliatre" class="h-12 w-auto object-contain" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+        <div class="hidden flex items-center gap-3.5">
+          <svg class="w-10 h-6 text-ivoire" viewBox="0 0 120 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 42L44 10L68 30L92 14L114 42" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 28V15H30V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div>
+            <p class="font-editorial text-lg leading-none text-ivoire">
+              <span class="italic">Wilmar</span> <span class="uppercase font-semibold tracking-[0.14em] text-sm">Filliatre</span>
+            </p>
+            <p class="text-[9px] uppercase tracking-[0.26em] text-brume mt-1">Agent Commercial en Immobilier</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-[10px] uppercase tracking-[0.28em] text-brume text-center">
+        RSAC Montauban 942 113 499
+      </p>
+
+      <div class="text-center sm:text-right">
+        <p class="text-lg tracking-[0.26em] font-light text-ivoire uppercase leading-none">Advance</p>
+        <p class="text-[9px] tracking-[0.34em] text-brume uppercase mt-1.5">Immobilier</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTEFEUILLE OFFICIEL -->
+  <section id="portefeuille" class="py-28 px-6 lg:px-10 border-b hairline bg-pierre">
+    <div class="max-w-6xl mx-auto reveal">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7">
+          <p class="text-[11px] uppercase tracking-[0.3em] text-or mb-4">Sélection &amp; Mandats Actifs</p>
+          <h2 class="font-editorial text-3xl sm:text-5xl font-normal text-ivoire leading-tight">
+            Accédez à l'intégralité de mes biens en temps réel.
+          </h2>
+          <p class="mt-6 text-sm sm:text-base text-brume font-light leading-relaxed max-w-2xl">
+            Maisons de caractère, villas contemporaines, appartements et terrains à bâtir : l'ensemble de mes mandats à la vente et à la location est centralisé sur ma vitrine officielle <strong class="font-medium text-ivoire">Advance Immobilier</strong> avec leurs reportages photographiques complets, diagnostics et barèmes d'honoraires actualisés.
+          </p>
+
+          <div class="mt-9 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <a href="https://www.advance-immobilier.com/contributor/person/wilmar-filliatre" target="_blank" rel="noopener noreferrer" class="btn-luxury px-8 py-4 bg-ivoire text-obsidienne font-medium text-xs uppercase tracking-[0.2em] hover:bg-or hover:text-obsidienne text-center">
+              Consulter mes biens sur Advance Immobilier &rarr;
+            </a>
+            <a href="https://wa.me/33672031712" target="_blank" rel="noopener noreferrer" class="btn-luxury px-7 py-4 border hairline text-ivoire text-xs uppercase tracking-[0.2em] hover:border-or hover:text-or text-center">
+              Échanger sur WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 bg-obsidienne border hairline p-8 sm:p-10">
+          <div class="flex items-center justify-between pb-5 mb-6 border-b hairline">
+            <span class="text-[10px] uppercase tracking-[0.25em] text-or">Garanties de diffusion</span>
+            <span class="text-[10px] uppercase tracking-[0.2em] text-brume">82 &amp; 31</span>
+          </div>
+          <ul class="space-y-5 text-sm text-brume font-light">
+            <li class="flex items-start gap-3.5">
+              <span class="text-or mt-0.5">&mdash;</span>
+              <span><strong class="text-ivoire font-normal">Force du réseau leader :</strong> Advance Immobilier, agence n°1 en volume de ventes sur Toulouse et 50 km autour (Top 100 Immobilier Excellence 2026).</span>
+            </li>
+            <li class="flex items-start gap-3.5">
+              <span class="text-or mt-0.5">&mdash;</span>
+              <span><strong class="text-ivoire font-normal">Partage inter-agences AMANDA :</strong> diffusion simultanée auprès des professionnels partenaires sur la Haute-Garonne (31) et le Tarn-et-Garonne (82).</span>
+            </li>
+            <li class="flex items-start gap-3.5">
+              <span class="text-or mt-0.5">&mdash;</span>
+              <span><strong class="text-ivoire font-normal">Clarté des honoraires :</strong> barèmes détaillés sur chaque fiche annonce.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- L'APPROCHE -->
+  <section id="approche" class="py-28 px-6 lg:px-10 border-b hairline bg-obsidienne">
+    <div class="max-w-6xl mx-auto reveal">
+      <div class="max-w-2xl mb-16">
+        <p class="text-[11px] uppercase tracking-[0.3em] text-or mb-4">Votre interlocuteur unique</p>
+        <h2 class="font-editorial text-3xl sm:text-5xl font-normal text-ivoire leading-tight">
+          Une présence locale de Fabas jusqu'à Toulouse.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 border-t border-l hairline">
+        <div class="p-8 sm:p-10 border-r border-b hairline bg-pierre/40">
+          <p class="font-editorial text-3xl text-or mb-4">01</p>
+          <h3 class="font-editorial text-2xl text-ivoire mb-3">Ancrage territorial</h3>
+          <p class="text-sm text-brume font-light leading-relaxed">
+            Basé à Fabas (82170), j'interviens quotidiennement entre Montauban, Grisolles, Fronton, Castelginest et l'agglomération toulousaine avec une maîtrise fine des valeurs par commune et micro-secteur.
+          </p>
+        </div>
+
+        <div class="p-8 sm:p-10 border-r border-b hairline bg-pierre/40">
+          <p class="font-editorial text-3xl text-or mb-4">02</p>
+          <h3 class="font-editorial text-2xl text-ivoire mb-3">Mise en valeur soignée</h3>
+          <p class="text-sm text-brume font-light leading-relaxed">
+            Chaque bien bénéficie d'une présentation architecturale exigeante, d'une qualification rigoureuse des acquéreurs et d'un suivi personnalisé à chaque étape jusqu'à l'acte authentique.
+          </p>
+        </div>
+
+        <div class="p-8 sm:p-10 border-r border-b hairline bg-pierre/40">
+          <p class="font-editorial text-3xl text-or mb-4">03</p>
+          <h3 class="font-editorial text-2xl text-ivoire mb-3">Cadre réglementé</h3>
+          <p class="text-sm text-brume font-light leading-relaxed">
+            Wilmar Filliatre — Agent Commercial en Immobilier (EI), immatriculé au RSAC de Montauban sous le numéro <strong class="text-ivoire font-normal">942 113 499</strong>, mandaté par Advance Immobilier.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVIS DE VALEUR SUR PLACE -->
+  <section id="estimation" class="py-28 px-6 lg:px-10 border-b hairline bg-pierre">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-14 items-start reveal">
+      <div class="lg:col-span-5">
+        <p class="text-[11px] uppercase tracking-[0.3em] text-or mb-4">Étude patrimoniale confidentielle</p>
+        <h2 class="font-editorial text-3xl sm:text-5xl font-normal text-ivoire leading-tight">
+          Avis de valeur sur place
+        </h2>
+        <p class="mt-6 text-sm text-brume font-light leading-relaxed">
+          La juste valeur d'une propriété ne se décrète pas derrière un écran. Orientation, qualité du bâti, prestations techniques, calme et environnement immédiat : je me déplace chez vous sur le 82 et le 31 pour établir une analyse comparative précise et sans engagement.
+        </p>
+
+        <div class="mt-8 p-7 bg-obsidienne border hairline-gold">
+          <p class="font-editorial text-2xl text-ivoire mb-2">Le Mandat Liberté Advance</p>
+          <p class="text-xs text-brume font-light leading-relaxed">
+            Vous bénéficiez de toute la puissance de diffusion d'Advance Immobilier et du fichier inter-agences AMANDA 82 / 31, en toute liberté : notre mandat est résiliable à tout moment.
+          </p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 bg-obsidienne border hairline p-8 sm:p-11">
+        <h3 class="font-editorial text-2xl sm:text-3xl text-ivoire mb-7">Solliciter un rendez-vous d'estimation</h3>
+        <form id="form-estimation" class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-[10px] uppercase tracking-[0.2em] text-brume mb-2">Nom &amp; Prénom *</label>
+              <input type="text" name="nom" required placeholder="Votre identité" class="w-full bg-transparent border-b hairline py-2.5 text-sm text-ivoire placeholder:text-brume/40 focus:outline-none focus:border-or transition" />
+            </div>
+            <div>
+              <label class="block text-[10px] uppercase tracking-[0.2em] text-brume mb-2">Téléphone *</label>
+              <input type="tel" name="telephone" required placeholder="06 00 00 00 00" class="w-full bg-transparent border-b hairline py-2.5 text-sm text-ivoire placeholder:text-brume/40 focus:outline-none focus:border-or transition" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-[10px] uppercase tracking-[0.2em] text-brume mb-2">Commune &amp; Code Postal *</label>
+              <input type="text" name="commune" required placeholder="Ex : 82170 Fabas ou 31620 Fronton" class="w-full bg-transparent border-b hairline py-2.5 text-sm text-ivoire placeholder:text-brume/40 focus:outline-none focus:border-or transition" />
+            </div>
+            <div>
+              <label class="block text-[10px] uppercase tracking-[0.2em] text-brume mb-2">Typologie du bien</label>
+              <select name="type_bien" class="w-full bg-obsidienne border-b hairline py-2.5 text-sm text-ivoire focus:outline-none focus:border-or transition">
+                <option value="Maison / Villa">Maison / Villa</option>
+                <option value="Appartement">Appartement</option>
+                <option value="Propriété / Corps de ferme">Propriété / Corps de ferme</option>
+                <option value="Terrain à bâtir">Terrain à bâtir</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-[10px] uppercase tracking-[0.2em] text-brume mb-2">Caractéristiques &amp; prestations notables</label>
+            <textarea name="details" rows="3" placeholder="Surface habitable, terrain, piscine, rénovation récente, horizon de vente..." class="w-full bg-transparent border-b hairline py-2.5 text-sm text-ivoire placeholder:text-brume/40 focus:outline-none focus:border-or transition"></textarea>
+          </div>
+
+          <button type="submit" class="btn-luxury w-full sm:w-auto px-9 py-4 bg-or text-obsidienne font-medium text-xs uppercase tracking-[0.22em] hover:bg-orclair">
+            Transmettre ma demande
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMME APPORTEUR D'AFFAIRES -->
+  <section id="apporteur" class="py-28 px-6 lg:px-10 border-b hairline bg-obsidienne">
+    <div class="max-w-6xl mx-auto reveal">
+      <div class="max-w-3xl mb-16">
+        <p class="text-[11px] uppercase tracking-[0.3em] text-or mb-4">Cercle de recommandation</p>
+        <h2 class="font-editorial text-3xl sm:text-5xl font-normal text-ivoire leading-tight">
+          Programme d'apporteur d'affaires
+        </h2>
+        <p class="mt-5 text-sm sm:text-base text-brume font-light leading-relaxed">
+          Vous connaissez un propriétaire vendeur ou un acquéreur qualifié sur le Tarn-et-Garonne (82) ou la Haute-Garonne (31) ? Dès la signature de l'acte authentique chez le notaire, votre recommandation est rétribuée selon ces barèmes clairs.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-14">
+        <div class="bg-pierre border hairline p-8 sm:p-10">
+          <p class="text-[10px] uppercase tracking-[0.25em] text-or mb-2">Indication Vendeur</p>
+          <h3 class="font-editorial text-2xl sm:text-3xl text-ivoire mb-7">Présentation d'un bien à la vente</h3>
+          <div class="divide-y hairline border-t border-b hairline">
+            <div class="py-4 flex items-center justify-between text-sm">
+              <span class="text-brume font-light">Transaction jusqu'à 200 000 €</span>
+              <span class="font-editorial text-2xl text-ivoire">800 €</span>
+            </div>
+            <div class="py-4 flex items-center justify-between text-sm">
+              <span class="text-brume font-light">De 200 001 € à 400 000 €</span>
+              <span class="font-editorial text-2xl text-ivoire">1 100 €</span>
+            </div>
+            <div class="py-4 flex items-center justify-between text-sm">
+              <span class="text-brume font-light">Au-delà de 400 001 €</span>
+              <span class="font-editorial text-2xl text-or">1 500 €</span>
+            </div>
+          </div>
+          <p class="mt-4 text-[11px] text-brume/70 font-light">
+            Rétribution réglée après encaissement des honoraires d'agence lors de la signature définitive.
+          </p>
+        </div>
+
+        <div class="bg-pierre border hairline p-8 sm:p-10">
+          <p class="text-[10px] uppercase tracking-[0.25em] text-or mb-2">Indication Acquéreur</p>
+          <h3 class="font-editorial text-2xl sm:text-3xl text-ivoire mb-7">Présentation d'un acquéreur</h3>
+          <div class="divide-y hairline border-t border-b hairline">
+            <div class="py-4 flex items-center justify-between text-sm">
+              <span class="text-brume font-light">Acquisition inférieure à 200 000 €</span>
+              <span class="font-editorial text-2xl text-ivoire">200 €</span>
+            </div>
+            <div class="py-4 flex items-center justify-between text-sm">
+              <span class="text-brume font-light">De 200 001 € à 300 000 €</span>
+              <span class="font-editorial text-2xl text-ivoire">300 €</span>
+            </div>
+            <div class="py-4 flex items-center justify-between text-sm">
+              <span class="text-brume font-light">De 300 001 € à 400 000 €</span>
+              <span class="font-editorial text-2xl text-ivoire">400 €</span>
+            </div>
+            <div class="py-4 flex items-center justify-between text-sm">
+              <span class="text-brume font-light">Au-delà de 400 001 €</span>
+              <span class="font-editorial text-2xl text-or">500 €</span>
+            </div>
+          </div>
+          <p class="mt-4 text-[11px] text-brume/70 font-light">
+            Valable pour toute acquisition finalisée sur l'un de nos biens sous mandat.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-pierre/70 border hairline p-8 sm:p-11">
+        <div class="flex flex-col md:flex-row md:items-center justify-between mb-7 gap-2">
+          <h3 class="font-editorial text-2xl sm:text-3xl text-ivoire">Déclarer une mise en relation</h3>
+          <span class="text-[11px] text-brume/70">Indication d'affaires ponctuelle — Cadre Loi Hoguet</span>
+        </div>
+
+        <form id="form-apporteur" class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div>
+              <label class="block text-[10px] uppercase tracking-[0.2em] text-brume mb-2">Vos Nom &amp; Prénom *</label>
+              <input type="text" name="apporteur_nom" required placeholder="Votre identité" class="w-full bg-transparent border-b hairline py-2.5 text-sm text-ivoire placeholder:text-brume/40 focus:outline-none focus:border-or transition" />
+            </div>
+            <div>
+              <label class="block text-[10px] uppercase tracking-[0.2em] text-brume mb-2">Votre Téléphone *</label>
+              <input type="tel" name="apporteur_tel" required placeholder="06 00 00 00 00" class="w-full bg-transparent border-b hairline py-2.5 text-sm text-ivoire placeholder:text-brume/40 focus:outline-none focus:border-or transition" />
+            </div>
+            <div>
+              <label class="block text-[10px] uppercase tracking-[0.2em] text-brume mb-2">Nature de l'indication *</label>
+              <select name="nature" class="w-full bg-pierre border-b hairline py-2.5 text-sm text-ivoire focus:outline-none focus:border-or transition">
+                <option value="Bien à vendre">Un bien à vendre</option>
+                <option value="Acquéreur en recherche">Un acquéreur en recherche</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-[10px] uppercase tracking-[0.2em] text-brume mb-2">Commune concernée *</label>
+              <input type="text" name="secteur_contact" required placeholder="Commune du bien ou secteur recherché" class="w-full bg-transparent border-b hairline py-2.5 text-sm text-ivoire placeholder:text-brume/40 focus:outline-none focus:border-or transition" />
+            </div>
+            <div>
+              <label class="block text-[10px] uppercase tracking-[0.2em] text-brume mb-2">Coordonnées ou précisions sur le contact *</label>
+              <input type="text" name="infos_contact" required placeholder="Nom, téléphone ou contexte du projet" class="w-full bg-transparent border-b hairline py-2.5 text-sm text-ivoire placeholder:text-brume/40 focus:outline-none focus:border-or transition" />
+            </div>
+          </div>
+
+          <button type="submit" class="btn-luxury w-full sm:w-auto px-9 py-4 bg-ivoire text-obsidienne font-medium text-xs uppercase tracking-[0.22em] hover:bg-or">
+            Enregistrer ma recommandation
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- RUBAN DÉFILANT DES 8 AVIS GOOGLE MY BUSINESS EN BAS DE PAGE -->
+  <section id="avis-google" class="py-20 border-b hairline bg-pierre overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 lg:px-10 mb-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+      <div>
+        <p class="text-[11px] uppercase tracking-[0.3em] text-or mb-2">Recommandations vérifiées</p>
+        <div class="flex items-center gap-3.5">
+          <h2 class="font-editorial text-3xl sm:text-4xl font-normal text-ivoire">Avis clients Google</h2>
+          <span class="px-3 py-1 bg-obsidienne border hairline-gold text-xs text-or font-medium tracking-wider">
+            5,0 &#9733; &bull; 8 avis
+          </span>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3">
+        <a href="https://www.google.com/search?sca_esv=825d62776290db59&sxsrf=AKL5yDiDqPfI_DjFrlupZUGWZNLeqvNdQw:1794612813350&q=avis+filliatre+wilmar&si=AE1YtOqiKPb2pdLXAi8quZ9vbH4aVq_aX8-3H9iFBLpRNK95czf49v5SihdLU-Gc-BFPq3odj0ORmnt8VIgYPj0-xZpLA8WrMF8yCfhWGGOW7SmALRWlxoI%3D&uds=AE2AFgZ2jEs7pfCtrwfpxOWhzAe2u_x7x2hCs08QdAjSY2bbdxp-KOJrmfY5KSgZuwner-VV5Lj9ZqniJkgPKpy3ANnAW_jpiw9ybxKpLVdRv-gUml9QdR_9XcIUOD2o0Q_9FCkGv32-&sa=X&ved=2ahUKEwi91_7ZjYaYAxUBVaQEHS3SAEoQ3PALegQIJRAF&biw=1470&bih=835&dpr=2" target="_blank" rel="noopener noreferrer" class="btn-luxury px-5 py-2.5 border hairline text-ivoire text-[11px] uppercase tracking-[0.18em] hover:border-or hover:text-or">
+          Tous les avis Google &rarr;
+        </a>
+        <a href="https://www.google.com/search?sca_esv=825d62776290db59&sxsrf=AKL5yDiDqPfI_DjFrlupZUGWZNLeqvNdQw:1794612813350&q=avis+filliatre+wilmar&si=AE1YtOqiKPb2pdLXAi8quZ9vbH4aVq_aX8-3H9iFBLpRNK95czf49v5SihdLU-Gc-BFPq3odj0ORmnt8VIgYPj0-xZpLA8WrMF8yCfhWGGOW7SmALRWlxoI%3D&uds=AE2AFgZ2jEs7pfCtrwfpxOWhzAe2u_x7x2hCs08QdAjSY2bbdxp-KOJrmfY5KSgZuwner-VV5Lj9ZqniJkgPKpy3ANnAW_jpiw9ybxKpLVdRv-gUml9QdR_9XcIUOD2o0Q_9FCkGv32-&sa=X&ved=2ahUKEwi91_7ZjYaYAxUBVaQEHS3SAEoQ3PALegQIJRAF&biw=1470&bih=835&dpr=2" target="_blank" rel="noopener noreferrer" class="btn-luxury px-5 py-2.5 border hairline-gold text-or text-[11px] uppercase tracking-[0.18em] hover:bg-or hover:text-obsidienne">
+          Déposer un avis
+        </a>
+      </div>
+    </div>
+
+    <div class="marquee-wrapper w-full py-2">
+      <div id="piste-avis-google" class="marquee-track"></div>
+    </div>
+  </section>
+
+  <!-- LIGNE DIRECTE & PIED DE PAGE AVEC LOGO -->
+  <footer id="contact" class="bg-obsidienne pt-24 pb-12 px-6 lg:px-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between pb-16 border-b hairline gap-10">
+        <div>
+          <p class="text-[11px] uppercase tracking-[0.3em] text-or mb-4">Ligne directe &amp; confidentielle</p>
+          <h2 class="font-editorial text-3xl sm:text-5xl font-normal text-ivoire">
+            Échangeons sur votre projet.
+          </h2>
+          <p class="mt-4 text-sm text-brume font-light max-w-lg">
+            Disponible par téléphone, SMS, WhatsApp ou courriel pour toute visite, estimation sur place ou partenariat sur le Tarn-et-Garonne (82) et la Haute-Garonne (31).
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row flex-wrap gap-3">
+          <a href="tel:+33672031712" class="btn-luxury px-7 py-4 bg-or text-obsidienne font-medium text-xs uppercase tracking-[0.2em] hover:bg-orclair text-center">
+            06 72 03 17 12
+          </a>
+          <a href="sms:+33672031712" class="btn-luxury px-6 py-4 border hairline text-ivoire text-xs uppercase tracking-[0.2em] hover:border-or hover:text-or text-center">
+            SMS
+          </a>
+          <a href="https://wa.me/33672031712" target="_blank" rel="noopener noreferrer" class="btn-luxury px-6 py-4 border hairline text-ivoire text-xs uppercase tracking-[0.2em] hover:border-or hover:text-or text-center">
+            WhatsApp
+          </a>
+          <a href="mailto:wfilliatre@advance-immobilier.com" class="btn-luxury px-6 py-4 border hairline text-ivoire text-xs uppercase tracking-[0.2em] hover:border-or hover:text-or text-center">
+            Email
+          </a>
+        </div>
+      </div>
+
+      <div class="pt-10 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-brume">
+        <div class="flex items-center gap-3.5">
+          <img src="logo.png" alt="Logo Wilmar Filliatre" class="h-11 w-auto object-contain" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+          <div class="hidden flex items-center gap-3.5">
+            <svg class="w-10 h-6 text-ivoire" viewBox="0 0 120 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 42L44 10L68 30L92 14L114 42" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M22 28V15H30V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div>
+              <p class="font-editorial text-lg leading-none text-ivoire">
+                <span class="italic">Wilmar</span> <span class="uppercase font-semibold tracking-[0.14em] text-sm">Filliatre</span>
+              </p>
+              <p class="text-[9px] uppercase tracking-[0.24em] text-brume mt-1">
+                Agent Commercial en Immobilier &bull; RSAC Montauban 942 113 499
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-center text-[11px] text-brume/80">
+          RSAC Montauban 942 113 499 &bull; Honoraires à la charge de l'acquéreur sauf mention contraire.
+        </p>
+
+        <div class="text-center md:text-right">
+          <p class="text-base tracking-[0.26em] font-light text-ivoire uppercase leading-none">Advance</p>
+          <p class="text-[8px] tracking-[0.34em] text-brume uppercase mt-1">Immobilier</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const AVIS_OFFICIELS = [
+      {
+        auteur: "beauval anne",
+        secteur: "Avis Google",
+        texte: "Monsieur Filliatre a été exceptionnel du début à la fin de notre projet d'achat immobilier. Il a immédiatement compris nos besoins et nos envies. Il a su nous proposer des propriétés qui correspondaient parfaitement à nos critères. Sa connaissance approfondie des aspects juridiques de l'immobilier nous a été précieuse. Grâce à lui, nous avons trouvé la maison de nos rêves et nous lui en sommes extrêmement reconnaissants. Je le recommande sans hésiter."
+      },
+      {
+        auteur: "Gaëlle",
+        secteur: "Avis Google",
+        texte: "Je recommande Wilmar. Il m'a accompagné du début jusqu'à la fin. Il est toujours disponible et très professionnel. Il est a l'ecoute et très rassurant."
+      },
+      {
+        auteur: "Jonathan E.",
+        secteur: "Avis Google",
+        texte: "Un grand merci à Wilmar Filliatre pour son accompagnement et sa gentillesse. Il a su comprendre mes besoin et m’a guidés avec patience et bienveillance. Une personne de confiance, passionnée par son métier. Je recommande les yeux fermés !"
+      },
+      {
+        auteur: "Alexandra",
+        secteur: "Avis Google",
+        texte: "De très bon conseils. Je recommande."
+      },
+      {
+        auteur: "Anna Régis-Marché",
+        secteur: "Avis Google",
+        texte: "Wilmar nous a été d'une aide précieuse dans notre recherche immobilière ; il a négocié le prix pour nous et s'est impliqué tout au long du processus, même après la vente et bien au-delà de ce qui était demandé. Nous sommes ravis d'avoir travaillé avec lui et apprécions son soutien constant."
+      },
+      {
+        auteur: "Jean L",
+        secteur: "Avis Google",
+        texte: "Un immense merci à M. Filliatre qui, dès nos premiers échanges, m'a conseillé avec professionnalisme, honnêteté et transparence. Pour mon premier achat immobilier, grâce à ses conseils avisés et à son soutien indéfectible, j'ai pu acquérir un bien exceptionnel qui répond à toutes mes attentes, et même les dépasse ! De l'évaluation initiale du projet et de l'analyse des besoins, à la recherche du bien et à la proposition d'achat, jusqu'à la finalisation de la transaction, Wilmar a été d'une aide précieuse. Je le recommande vivement ! 🙂👍🏻"
+      },
+      {
+        auteur: "Julien Teuma",
+        secteur: "Avis Google",
+        texte: "Wimar m'a redonné confiance dans les agents immobiliers. J'ai fait appel à ses services pour vendre une maison et, de l'estimation initiale à la vente finale, il a toujours été disponible, clair dans ses explicatons et a géré le processus avec une grande rigueur. C'est un véritable professionnel de l'immobilier que je recommande sans hésitation."
+      },
+      {
+        auteur: "gf Superfarf",
+        secteur: "Avis Google",
+        texte: "M. Filliatre tout du long de mon achat immobilier fut parfait. Tant dans la disponibilité pour répondre à mes questions que dans ses conseils pour que cet achat se passe sans accroc. Je le recommande donc les yeux fermés."
+      }
+    ];
+
+    function echapperHtml(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function afficherBandeauAvis(listeAvis) {
+      const piste = document.getElementById('piste-avis-google');
+      if (!piste || !listeAvis.length) return;
+      const listeDouble = [...listeAvis, ...listeAvis];
+      piste.innerHTML = listeDouble.map(avis => `
+        <article class="w-[340px] sm:w-[410px] shrink-0 bg-obsidienne border hairline p-7 flex flex-col justify-between hover:border-or/50 transition">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-1 text-or text-xs" aria-label="5 étoiles">
+                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+              </div>
+              <span class="text-[9px] uppercase tracking-[0.22em] text-brume">Avis Google</span>
+            </div>
+            <p class="text-sm text-ivoire/90 font-light leading-relaxed italic">
+              « ${echapperHtml(avis.texte)} »
+            </p>
+          </div>
+          <div class="mt-6 pt-3.5 border-t hairline flex items-center justify-between text-xs">
+            <span class="text-ivoire font-medium">${echapperHtml(avis.auteur)}</span>
+            <span class="text-brume">${echapperHtml(avis.secteur || 'Avis Google')}</span>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    async function chargerAvisGoogle() {
+      afficherBandeauAvis(AVIS_OFFICIELS);
+      try {
+        const resp = await fetch('avis_google.json?t=' + Date.now());
+        if (!resp.ok) return;
+        const data = await resp.json();
+        if (Array.isArray(data.avis) && data.avis.length > 0) {
+          afficherBandeauAvis(data.avis);
+        }
+      } catch (e) {
+        // Affichage déjà garanti par AVIS_OFFICIELS
+      }
+    }
+
+    chargerAvisGoogle();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+    function envoyerVersMessagerie(sujet, corps) {
+      const destinataire = 'wfilliatre@advance-immobilier.com';
+      window.location.href = `mailto:${destinataire}?subject=${encodeURIComponent(sujet)}&body=${encodeURIComponent(corps)}`;
+    }
+
+    document.getElementById('form-estimation').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const fd = new FormData(this);
+      const sujet = `Demande d'avis de valeur sur place — ${fd.get('commune')}`;
+      const corps =
+        `Bonjour Wilmar,\n\n` +
+        `Je souhaite obtenir un avis de valeur sur place pour mon bien :\n` +
+        `- Nom : ${fd.get('nom')}\n` +
+        `- Téléphone : ${fd.get('telephone')}\n` +
+        `- Commune / CP : ${fd.get('commune')}\n` +
+        `- Typologie : ${fd.get('type_bien')}\n` +
+        `- Précisions : ${fd.get('details') || 'Aucune'}\n\n` +
+        `Cordialement.`;
+      envoyerVersMessagerie(sujet, corps);
+    });
+
+    document.getElementById('form-apporteur').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const fd = new FormData(this);
+      const sujet = `Indication Apporteur d'Affaires (${fd.get('nature')}) — ${fd.get('secteur_contact')}`;
+      const corps =
+        `Bonjour Wilmar,\n\n` +
+        `Je souhaite déclarer une mise en relation en tant qu'apporteur d'affaires :\n` +
+        `- Mon nom : ${fd.get('apporteur_nom')}\n` +
+        `- Mon téléphone : ${fd.get('apporteur_tel')}\n` +
+        `- Nature : ${fd.get('nature')}\n` +
+        `- Commune / Secteur : ${fd.get('secteur_contact')}\n` +
+        `- Coordonnées du contact : ${fd.get('infos_contact')}\n\n` +
+        `Cordialement.`;
+      envoyerVersMessagerie(sujet, corps);
+    });
+  </script>
 </body>
 </html>
