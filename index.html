@@ -491,10 +491,10 @@
 
         <div class="lg:col-span-5 flex flex-col gap-3.5">
           <a
-            href="sms:+33749331064?&body=Bonjour%20Doroth%C3%A9e%2C%20je%20souhaite%20faire%20appel%20%C3%A0%20vous%20pour%20mon%20financement%20immobilier%20car%20j%27ai%20vu%20vos%20coordonn%C3%A9es%20sur%20la%20page%20de%20Wilmar%20Filliatre%20(wilmar-filliatre.fr)."
+            href="sms:+33749331064;?&body=Bonjour%20Doroth%C3%A9e%2C%20je%20souhaite%20faire%20appel%20%C3%A0%20vous%20pour%20mon%20financement%20immobilier%20car%20j%27ai%20vu%20vos%20coordonn%C3%A9es%20sur%20la%20page%20de%20Wilmar%20Filliatre%20(wilmar-filliatre.fr)."
             class="btn-luxury w-full px-7 py-4 bg-or text-obsidienne font-medium text-xs uppercase tracking-[0.2em] hover:bg-orclair text-center"
           >
-            Contacter Dorothée par SMS &rarr;
+            Envoyer un SMS au 07 49 33 10 64 &rarr;
           </a>
           <a
             href="mailto:d.guimbart@sagesse.fr?subject=Demande%20d%27%C3%A9tude%20de%20financement%20%E2%80%94%20Recommandation%20Wilmar%20Filliatre&body=Bonjour%20Doroth%C3%A9e%2C%0A%0AJe%20souhaite%20faire%20appel%20%C3%A0%20vos%20services%20pour%20une%20%C3%A9tude%20de%20financement%20immobilier%2C%20ayant%20vu%20vos%20coordonn%C3%A9es%20sur%20la%20page%20de%20Wilmar%20Filliatre%20(wilmar-filliatre.fr).%0A%0AMon%20projet%20(achat%2C%20secteur%2C%20budget%20estim%C3%A9)%20%3A%20%0AMes%20coordonn%C3%A9es%20t%C3%A9l%C3%A9phoniques%20%3A%20%0A%0ACordialement."
@@ -502,12 +502,13 @@
           >
             Contacter Dorothée par Email
           </a>
-          <a
-            href="tel:+33749331064"
-            class="text-[11px] text-brume hover:text-or text-center tracking-[0.14em] transition pt-1"
+          <button
+            type="button"
+            onclick="navigator.clipboard.writeText('Bonjour Dorothée, je souhaite faire appel à vous pour mon financement immobilier car j\'ai vu vos coordonnées sur la page de Wilmar Filliatre (wilmar-filliatre.fr).'); this.textContent='Message copié ! Numéro : 07 49 33 10 64'; setTimeout(() => this.textContent='Copier le message & le numéro (07 49 33 10 64)', 3500);"
+            class="text-[11px] text-brume hover:text-or text-center tracking-[0.12em] transition pt-1 cursor-pointer"
           >
-            Appel direct : 07 49 33 10 64
-          </a>
+            Copier le message &amp; le numéro (07 49 33 10 64)
+          </button>
         </div>
       </div>
     </div>
