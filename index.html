@@ -11,7 +11,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:title" content="Wilmar Filliatre — Advance Immobilier (82 & 31)" />
-  <meta property="og:description" content="Découvrez mes biens sur Advance Immobilier, consultez les avis clients Google, demandez un avis de valeur sur place ou devenez apporteur d'affaires." />
+  <meta property="og:description" content="Découvrez mes biens sur Advance Immobilier, consultez les avis clients Google (5,0/5), demandez un avis de valeur sur place ou devenez apporteur d'affaires." />
 
   <script type="application/ld+json">
   {
@@ -22,6 +22,12 @@
     "description": "Accompagnement immobilier sur-mesure en Tarn-et-Garonne (82) et Haute-Garonne (31) : vente, location, avis de valeur sur place et indication d'affaires.",
     "telephone": "+33672031712",
     "email": "wfilliatre@advance-immobilier.com",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "8",
+      "bestRating": "5"
+    },
     "areaServed": [
       { "@type": "AdministrativeArea", "name": "Tarn-et-Garonne" },
       { "@type": "AdministrativeArea", "name": "Haute-Garonne" },
@@ -109,14 +115,14 @@
       transform: translateY(-1px);
     }
     .marquee-wrapper {
-      mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-      -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+      mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
     }
     .marquee-track {
       display: flex;
       width: max-content;
       gap: 1.75rem;
-      animation: defilementAvis 48s linear infinite;
+      animation: defilementAvis 65s linear infinite;
     }
     .marquee-wrapper:hover .marquee-track {
       animation-play-state: paused;
@@ -480,7 +486,7 @@
     </div>
   </section>
 
-  <!-- RUBAN DÉFILANT DES AVIS GOOGLE MY BUSINESS EN BAS DE PAGE -->
+  <!-- RUBAN DÉFILANT DES 8 AVIS GOOGLE MY BUSINESS EN BAS DE PAGE -->
   <section id="avis-google" class="py-20 border-b hairline bg-pierre overflow-hidden">
     <div class="max-w-6xl mx-auto px-6 lg:px-10 mb-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
       <div>
@@ -570,26 +576,46 @@
   </footer>
 
   <script>
-    const AVIS_SECOURS = [
+    const AVIS_OFFICIELS = [
       {
-        auteur: "Client Vendeur",
-        secteur: "Fabas (82)",
-        texte: "Un accompagnement irréprochable du début à la fin. Très grande disponibilité, écoute attentive et conseils justes pour la mise en vente de notre maison."
+        auteur: "beauval anne",
+        secteur: "Avis Google",
+        texte: "Monsieur Filliatre a été exceptionnel du début à la fin de notre projet d'achat immobilier. Il a immédiatement compris nos besoins et nos envies. Il a su nous proposer des propriétés qui correspondaient parfaitement à nos critères. Sa connaissance approfondie des aspects juridiques de l'immobilier nous a été précieuse. Grâce à lui, nous avons trouvé la maison de nos rêves et nous lui en sommes extrêmement reconnaissants. Je le recommande sans hésiter."
       },
       {
-        auteur: "Client Acquéreur",
-        secteur: "Fronton (31)",
-        texte: "Professionnalisme, réactivité et suivi sérieux à chaque étape jusqu'à la signature chez le notaire. Je recommande Wilmar Filliatre sans hésitation."
+        auteur: "Gaëlle",
+        secteur: "Avis Google",
+        texte: "Je recommande Wilmar. Il m'a accompagné du début jusqu'à la fin. Il est toujours disponible et très professionnel. Il est a l'ecoute et très rassurant."
       },
       {
-        auteur: "Client Vendeur",
-        secteur: "Montauban (82)",
-        texte: "Estimation précise et réaliste du marché local, comptes rendus réguliers après chaque visite et vente concrétisée dans les meilleurs délais."
+        auteur: "Jonathan E.",
+        secteur: "Avis Google",
+        texte: "Un grand merci à Wilmar Filliatre pour son accompagnement et sa gentillesse. Il a su comprendre mes besoin et m’a guidés avec patience et bienveillance. Une personne de confiance, passionnée par son métier. Je recommande les yeux fermés !"
       },
       {
-        auteur: "Client Acquéreur",
-        secteur: "Castelginest (31)",
-        texte: "Un conseiller à l'écoute qui connaît parfaitement son secteur et prend le temps de sécuriser chaque détail du projet immobilier."
+        auteur: "Alexandra",
+        secteur: "Avis Google",
+        texte: "De très bon conseils. Je recommande."
+      },
+      {
+        auteur: "Anna Régis-Marché",
+        secteur: "Avis Google",
+        texte: "Wilmar nous a été d'une aide précieuse dans notre recherche immobilière ; il a négocié le prix pour nous et s'est impliqué tout au long du processus, même après la vente et bien au-delà de ce qui était demandé. Nous sommes ravis d'avoir travaillé avec lui et apprécions son soutien constant."
+      },
+      {
+        auteur: "Jean L",
+        secteur: "Avis Google",
+        texte: "Un immense merci à M. Filliatre qui, dès nos premiers échanges, m'a conseillé avec professionnalisme, honnêteté et transparence. Pour mon premier achat immobilier, grâce à ses conseils avisés et à son soutien indéfectible, j'ai pu acquérir un bien exceptionnel qui répond à toutes mes attentes, et même les dépasse ! De l'évaluation initiale du projet et de l'analyse des besoins, à la recherche du bien et à la proposition d'achat, jusqu'à la finalisation de la transaction, Wilmar a été d'une aide précieuse. Je le recommande vivement ! 🙂👍🏻"
+      },
+      {
+        auteur: "Julien Teuma",
+        secteur: "Avis Google",
+        texte: "Wimar m'a redonné confiance dans les agents immobiliers. J'ai fait appel à ses services pour vendre une maison et, de l'estimation initiale à la vente finale, il a toujours été disponible, clair dans ses explicatons et a géré le processus avec une grande rigueur. C'est un véritable professionnel de l'immobilier que je recommande sans hésitation."
+      },
+      {
+        auteur: "gf Superfarf",
+        secteur: "Avis Google",
+        texte: "M. Filliatre tout du long de mon achat immobilier fut parfait. Tant dans la disponibilité pour répondre à mes questions que dans ses conseils pour que cet achat se passe sans accroc. Je le recommande donc les yeux fermés."
       }
     ];
 
@@ -606,7 +632,7 @@
       if (!piste || !listeAvis.length) return;
       const listeDouble = [...listeAvis, ...listeAvis];
       piste.innerHTML = listeDouble.map(avis => `
-        <article class="w-[330px] sm:w-[390px] shrink-0 bg-obsidienne border hairline p-7 flex flex-col justify-between hover:border-or/50 transition">
+        <article class="w-[340px] sm:w-[410px] shrink-0 bg-obsidienne border hairline p-7 flex flex-col justify-between hover:border-or/50 transition">
           <div>
             <div class="flex items-center justify-between mb-4">
               <div class="flex items-center gap-1 text-or text-xs" aria-label="5 étoiles">
@@ -627,18 +653,17 @@
     }
 
     async function chargerAvisGoogle() {
+      afficherBandeauAvis(AVIS_OFFICIELS);
       try {
         const resp = await fetch('avis_google.json?t=' + Date.now());
-        if (!resp.ok) throw new Error('JSON non trouvé');
+        if (!resp.ok) return;
         const data = await resp.json();
         if (Array.isArray(data.avis) && data.avis.length > 0) {
           afficherBandeauAvis(data.avis);
-          return;
         }
       } catch (e) {
-        // Repli transparent si avis_google.json n'est pas encore créé
+        // Affichage déjà garanti par AVIS_OFFICIELS
       }
-      afficherBandeauAvis(AVIS_SECOURS);
     }
 
     chargerAvisGoogle();
