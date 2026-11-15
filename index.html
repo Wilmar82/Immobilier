@@ -169,15 +169,6 @@
       background-size: cover;
       background-position: center;
     }
-    .reveal {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
     .btn-luxury {
       position: relative;
       overflow: hidden;
@@ -230,9 +221,9 @@
 
       <nav class="hidden lg:flex items-center gap-6 text-[11px] uppercase tracking-[0.2em] text-brume">
         <a href="#a-propos" class="hover:text-ivoire transition">À propos</a>
+        <a href="#realisations" class="hover:text-ivoire transition">Réalisations</a>
         <a href="#secteurs" class="hover:text-ivoire transition">Secteurs 82 &amp; 31</a>
         <a href="#portefeuille" class="hover:text-ivoire transition">Portefeuille</a>
-        <a href="#realisations" class="hover:text-ivoire transition">Réalisations</a>
         <a href="#estimation" class="hover:text-ivoire transition">Avis de valeur</a>
         <a href="#financement" class="hover:text-ivoire transition">Financement</a>
         <a href="#apporteur" class="hover:text-ivoire transition">Apporteur d'affaires</a>
@@ -308,9 +299,8 @@
 
   <!-- ENCART À PROPOS -->
   <section id="a-propos" class="py-28 px-6 lg:px-10 border-b hairline bg-pierre">
-    <div class="max-w-6xl mx-auto reveal">
+    <div class="max-w-6xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-        <!-- COLONNE PORTRAIT & IDENTITÉ -->
         <div class="lg:col-span-5 lg:sticky lg:top-28">
           <div class="bg-obsidienne border hairline-gold p-4">
             <div class="relative aspect-[4/5] w-full overflow-hidden bg-basalte">
@@ -346,7 +336,6 @@
           </div>
         </div>
 
-        <!-- COLONNE TEXTE DE PRÉSENTATION -->
         <div class="lg:col-span-7">
           <p class="text-[11px] uppercase tracking-[0.32em] text-or mb-4">À propos</p>
           <h2 class="font-editorial text-3xl sm:text-5xl font-normal text-ivoire leading-tight">
@@ -406,127 +395,16 @@
     </div>
   </section>
 
-  <!-- L'APPROCHE & SECTEURS D'INTERVENTION SEO -->
-  <section id="secteurs" class="py-28 px-6 lg:px-10 border-b hairline bg-obsidienne">
-    <div class="max-w-6xl mx-auto reveal">
-      <div class="max-w-3xl mb-16">
-        <p class="text-[11px] uppercase tracking-[0.3em] text-or mb-4">Ancrage territorial &bull; Rayon de 20 km autour de Fabas (82170)</p>
-        <h2 class="font-editorial text-3xl sm:text-5xl font-normal text-ivoire leading-tight">
-          Votre conseiller immobilier en Tarn-et-Garonne (82) et Haute-Garonne (31).
-        </h2>
-        <p class="mt-5 text-sm sm:text-base text-brume font-light leading-relaxed">
-          Basé à <strong class="text-ivoire font-normal">Fabas (82170)</strong>, à la frontière du Tarn-et-Garonne et de la Haute-Garonne, j'accompagne propriétaires vendeurs et acquéreurs sur l'axe Montauban – Toulouse avec une connaissance précise des prix au m² et des dynamiques de chaque commune.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 border-t border-l hairline mb-14">
-        <div class="p-8 sm:p-10 border-r border-b hairline bg-pierre/40">
-          <p class="font-editorial text-3xl text-or mb-4">01</p>
-          <h3 class="font-editorial text-2xl text-ivoire mb-3">Maîtrise micro-locale</h3>
-          <p class="text-sm text-brume font-light leading-relaxed">
-            De <strong class="text-ivoire font-normal">Toulouse</strong> à <strong class="text-ivoire font-normal">Montauban</strong>, en passant par <strong class="text-ivoire font-normal">Fenouillet</strong>, <strong class="text-ivoire font-normal">Fronton</strong> et <strong class="text-ivoire font-normal">Montech</strong>, chaque estimation s'appuie sur les ventes réelles constatées dans votre quartier.
-          </p>
-        </div>
-
-        <div class="p-8 sm:p-10 border-r border-b hairline bg-pierre/40">
-          <p class="font-editorial text-3xl text-or mb-4">02</p>
-          <h3 class="font-editorial text-2xl text-ivoire mb-3">Mise en valeur soignée</h3>
-          <p class="text-sm text-brume font-light leading-relaxed">
-            Chaque bien bénéficie d'une présentation architecturale exigeante, d'une qualification financière rigoureuse des acquéreurs et d'un suivi personnalisé jusqu'à l'acte authentique.
-          </p>
-        </div>
-
-        <div class="p-8 sm:p-10 border-r border-b hairline bg-pierre/40">
-          <p class="font-editorial text-3xl text-or mb-4">03</p>
-          <h3 class="font-editorial text-2xl text-ivoire mb-3">Cadre réglementé</h3>
-          <p class="text-sm text-brume font-light leading-relaxed">
-            Wilmar Filliatre — Agent Commercial en Immobilier (EI), immatriculé au RSAC de Montauban sous le numéro <strong class="text-ivoire font-normal">942 113 499</strong>, mandaté par Advance Immobilier.
-          </p>
-        </div>
-      </div>
-
-      <!-- COMMUNES DESSERVIES AVEC CODES POSTAUX -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div class="bg-pierre border hairline p-8">
-          <div class="flex items-center justify-between pb-4 mb-5 border-b hairline">
-            <h3 class="font-editorial text-2xl text-ivoire">Sud Tarn-et-Garonne (82)</h3>
-            <span class="text-[10px] uppercase tracking-[0.22em] text-or">Axes Fabas &bull; Montauban &bull; Garonne</span>
-          </div>
-          <p class="text-sm text-brume font-light leading-relaxed">
-            Accompagnement achat et vente sur <strong class="text-ivoire font-normal">Fabas (82170)</strong>, <strong class="text-ivoire font-normal">Grisolles (82170)</strong>, <strong class="text-ivoire font-normal">Canals (82170)</strong>, <strong class="text-ivoire font-normal">Bessens (82170)</strong>, Pompignan (82170), Dieupentale (82170), Monbéqui (82170), <strong class="text-ivoire font-normal">Montauban (82000)</strong>, <strong class="text-ivoire font-normal">Bressols (82710)</strong>, <strong class="text-ivoire font-normal">Montech (82700)</strong>, Montbeton (82290), Finhan (82700), Montbartier (82700), Verdun-sur-Garonne (82600), Aucamville (82600), Labastide-Saint-Pierre (82370), Campsas (82370), Nohic (82370), Orgueil (82370) et Reyniès (82370).
-          </p>
-        </div>
-
-        <div class="bg-pierre border hairline p-8">
-          <div class="flex items-center justify-between pb-4 mb-5 border-b hairline">
-            <h3 class="font-editorial text-2xl text-ivoire">Nord Haute-Garonne (31)</h3>
-            <span class="text-[10px] uppercase tracking-[0.22em] text-or">Frontonnais &bull; Nord Toulousain</span>
-          </div>
-          <p class="text-sm text-brume font-light leading-relaxed">
-            Accompagnement achat et vente sur <strong class="text-ivoire font-normal">Fronton (31620)</strong>, <strong class="text-ivoire font-normal">Bouloc (31620)</strong>, <strong class="text-ivoire font-normal">Villaudric (31620)</strong>, <strong class="text-ivoire font-normal">Villeneuve-lès-Bouloc (31620)</strong>, <strong class="text-ivoire font-normal">Castelnau-d'Estrétefonds (31620)</strong>, Saint-Rustice (31620), Cépet (31620), <strong class="text-ivoire font-normal">Villemur-sur-Tarn (31340)</strong>, Vacquiers (31340), <strong class="text-ivoire font-normal">Grenade (31330)</strong>, Ondes (31330), Merville (31330), Saint-Jory (31790), Saint-Sauveur (31790), Bruguières (31150), <strong class="text-ivoire font-normal">Fenouillet (31150)</strong>, <strong class="text-ivoire font-normal">Saint-Alban (31140)</strong>, <strong class="text-ivoire font-normal">Montberon (31140)</strong>, Castelginest (31780) et <strong class="text-ivoire font-normal">Toulouse (31000)</strong>.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PORTEFEUILLE OFFICIEL -->
-  <section id="portefeuille" class="py-28 px-6 lg:px-10 border-b hairline bg-pierre">
-    <div class="max-w-6xl mx-auto reveal">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-7">
-          <p class="text-[11px] uppercase tracking-[0.3em] text-or mb-4">Sélection &amp; Mandats Actifs</p>
-          <h2 class="font-editorial text-3xl sm:text-5xl font-normal text-ivoire leading-tight">
-            Accédez à l'intégralité de mes biens en temps réel.
-          </h2>
-          <p class="mt-6 text-sm sm:text-base text-brume font-light leading-relaxed max-w-2xl">
-            Maisons de caractère, villas contemporaines, appartements et terrains à bâtir : l'ensemble de mes mandats à la vente et à la location est centralisé sur ma vitrine officielle <strong class="font-medium text-ivoire">Advance Immobilier</strong> avec leurs reportages photographiques complets, diagnostics et barèmes d'honoraires actualisés.
-          </p>
-
-          <div class="mt-9 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-            <a href="https://www.advance-immobilier.com/contributor/person/wilmar-filliatre" target="_blank" rel="noopener noreferrer" class="btn-luxury px-8 py-4 bg-ivoire text-obsidienne font-medium text-xs uppercase tracking-[0.2em] hover:bg-or hover:text-obsidienne text-center">
-              Consulter mes biens sur Advance Immobilier &rarr;
-            </a>
-            <a href="https://wa.me/33672031712" target="_blank" rel="noopener noreferrer" class="btn-luxury px-7 py-4 border hairline text-ivoire text-xs uppercase tracking-[0.2em] hover:border-or hover:text-or text-center">
-              Échanger sur WhatsApp
-            </a>
-          </div>
-        </div>
-
-        <div class="lg:col-span-5 bg-obsidienne border hairline p-8 sm:p-10">
-          <div class="flex items-center justify-between pb-5 mb-6 border-b hairline">
-            <span class="text-[10px] uppercase tracking-[0.25em] text-or">Garanties de diffusion</span>
-            <span class="text-[10px] uppercase tracking-[0.2em] text-brume">82 &amp; 31</span>
-          </div>
-          <ul class="space-y-5 text-sm text-brume font-light">
-            <li class="flex items-start gap-3.5">
-              <span class="text-or mt-0.5">&mdash;</span>
-              <span><strong class="text-ivoire font-normal">Force du réseau leader :</strong> Advance Immobilier, agence n°1 en volume de ventes sur Toulouse et 50 km autour (Top 100 Immobilier Excellence 2026).</span>
-            </li>
-            <li class="flex items-start gap-3.5">
-              <span class="text-or mt-0.5">&mdash;</span>
-              <span><strong class="text-ivoire font-normal">Partage inter-agences AMANDA :</strong> diffusion simultanée auprès des professionnels partenaires sur la Haute-Garonne (31) et le Tarn-et-Garonne (82).</span>
-            </li>
-            <li class="flex items-start gap-3.5">
-              <span class="text-or mt-0.5">&mdash;</span>
-              <span><strong class="text-ivoire font-normal">Clarté des honoraires :</strong> barèmes détaillés sur chaque fiche annonce.</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- RÉALISATIONS & ACCOMPAGNEMENTS PASSÉS -->
   <section id="realisations" class="py-28 px-6 lg:px-10 border-b hairline bg-obsidienne">
-    <div class="max-w-6xl mx-auto reveal">
+    <div class="max-w-6xl mx-auto">
       <div class="max-w-3xl mb-14">
         <p class="text-[11px] uppercase tracking-[0.3em] text-or mb-4">Références &amp; Projets aboutis</p>
         <h2 class="font-editorial text-3xl sm:text-5xl font-normal text-ivoire leading-tight">
           Quelques ventes et accompagnements passés
         </h2>
         <p class="mt-5 text-sm sm:text-base text-brume font-light leading-relaxed">
-          Parce que la confiance se mesure aux résultats concrets sur le terrain, voici <strong class="text-ivoire font-normal">un aperçu non exhaustif de quelques-unes des transactions et recherches accompagnées</strong> récemment en Tarn-et-Garonne (82) et Haute-Garonne (31).
+          Parce que la confiance se mesure aux résultats concrets sur le terrain, voici <strong class="text-ivoire font-normal">un aperçu non exhaustif de quelques-unes des ventes et recherches accompagnées</strong> en Tarn-et-Garonne (82) et Haute-Garonne (31).
         </p>
       </div>
 
@@ -689,9 +567,120 @@
     </div>
   </section>
 
+  <!-- L'APPROCHE & SECTEURS D'INTERVENTION SEO -->
+  <section id="secteurs" class="py-28 px-6 lg:px-10 border-b hairline bg-pierre">
+    <div class="max-w-6xl mx-auto">
+      <div class="max-w-3xl mb-16">
+        <p class="text-[11px] uppercase tracking-[0.3em] text-or mb-4">Ancrage territorial &bull; Rayon de 20 km autour de Fabas (82170)</p>
+        <h2 class="font-editorial text-3xl sm:text-5xl font-normal text-ivoire leading-tight">
+          Votre conseiller immobilier en Tarn-et-Garonne (82) et Haute-Garonne (31).
+        </h2>
+        <p class="mt-5 text-sm sm:text-base text-brume font-light leading-relaxed">
+          Basé à <strong class="text-ivoire font-normal">Fabas (82170)</strong>, à la frontière du Tarn-et-Garonne et de la Haute-Garonne, j'accompagne propriétaires vendeurs et acquéreurs sur l'axe Montauban – Toulouse avec une connaissance précise des prix au m² et des dynamiques de chaque commune.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 border-t border-l hairline mb-14">
+        <div class="p-8 sm:p-10 border-r border-b hairline bg-obsidienne/60">
+          <p class="font-editorial text-3xl text-or mb-4">01</p>
+          <h3 class="font-editorial text-2xl text-ivoire mb-3">Maîtrise micro-locale</h3>
+          <p class="text-sm text-brume font-light leading-relaxed">
+            De <strong class="text-ivoire font-normal">Toulouse</strong> à <strong class="text-ivoire font-normal">Montauban</strong>, en passant par <strong class="text-ivoire font-normal">Fenouillet</strong>, <strong class="text-ivoire font-normal">Fronton</strong> et <strong class="text-ivoire font-normal">Montech</strong>, chaque estimation s'appuie sur les ventes réelles constatées dans votre quartier.
+          </p>
+        </div>
+
+        <div class="p-8 sm:p-10 border-r border-b hairline bg-obsidienne/60">
+          <p class="font-editorial text-3xl text-or mb-4">02</p>
+          <h3 class="font-editorial text-2xl text-ivoire mb-3">Mise en valeur soignée</h3>
+          <p class="text-sm text-brume font-light leading-relaxed">
+            Chaque bien bénéficie d'une présentation architecturale exigeante, d'une qualification financière rigoureuse des acquéreurs et d'un suivi personnalisé jusqu'à l'acte authentique.
+          </p>
+        </div>
+
+        <div class="p-8 sm:p-10 border-r border-b hairline bg-obsidienne/60">
+          <p class="font-editorial text-3xl text-or mb-4">03</p>
+          <h3 class="font-editorial text-2xl text-ivoire mb-3">Cadre réglementé</h3>
+          <p class="text-sm text-brume font-light leading-relaxed">
+            Wilmar Filliatre — Agent Commercial en Immobilier (EI), immatriculé au RSAC de Montauban sous le numéro <strong class="text-ivoire font-normal">942 113 499</strong>, mandaté par Advance Immobilier.
+          </p>
+        </div>
+      </div>
+
+      <!-- COMMUNES DESSERVIES AVEC CODES POSTAUX -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-obsidienne border hairline p-8">
+          <div class="flex items-center justify-between pb-4 mb-5 border-b hairline">
+            <h3 class="font-editorial text-2xl text-ivoire">Sud Tarn-et-Garonne (82)</h3>
+            <span class="text-[10px] uppercase tracking-[0.22em] text-or">Axes Fabas &bull; Montauban &bull; Garonne</span>
+          </div>
+          <p class="text-sm text-brume font-light leading-relaxed">
+            Accompagnement achat et vente sur <strong class="text-ivoire font-normal">Fabas (82170)</strong>, <strong class="text-ivoire font-normal">Grisolles (82170)</strong>, <strong class="text-ivoire font-normal">Canals (82170)</strong>, <strong class="text-ivoire font-normal">Bessens (82170)</strong>, Pompignan (82170), Dieupentale (82170), Monbéqui (82170), <strong class="text-ivoire font-normal">Montauban (82000)</strong>, <strong class="text-ivoire font-normal">Bressols (82710)</strong>, <strong class="text-ivoire font-normal">Montech (82700)</strong>, Montbeton (82290), Finhan (82700), Montbartier (82700), Verdun-sur-Garonne (82600), Aucamville (82600), Labastide-Saint-Pierre (82370), Campsas (82370), Nohic (82370), Orgueil (82370) et Reyniès (82370).
+          </p>
+        </div>
+
+        <div class="bg-obsidienne border hairline p-8">
+          <div class="flex items-center justify-between pb-4 mb-5 border-b hairline">
+            <h3 class="font-editorial text-2xl text-ivoire">Nord Haute-Garonne (31)</h3>
+            <span class="text-[10px] uppercase tracking-[0.22em] text-or">Frontonnais &bull; Nord Toulousain</span>
+          </div>
+          <p class="text-sm text-brume font-light leading-relaxed">
+            Accompagnement achat et vente sur <strong class="text-ivoire font-normal">Fronton (31620)</strong>, <strong class="text-ivoire font-normal">Bouloc (31620)</strong>, <strong class="text-ivoire font-normal">Villaudric (31620)</strong>, <strong class="text-ivoire font-normal">Villeneuve-lès-Bouloc (31620)</strong>, <strong class="text-ivoire font-normal">Castelnau-d'Estrétefonds (31620)</strong>, Saint-Rustice (31620), Cépet (31620), <strong class="text-ivoire font-normal">Villemur-sur-Tarn (31340)</strong>, Vacquiers (31340), <strong class="text-ivoire font-normal">Grenade (31330)</strong>, Ondes (31330), Merville (31330), Saint-Jory (31790), Saint-Sauveur (31790), Bruguières (31150), <strong class="text-ivoire font-normal">Fenouillet (31150)</strong>, <strong class="text-ivoire font-normal">Saint-Alban (31140)</strong>, <strong class="text-ivoire font-normal">Montberon (31140)</strong>, Castelginest (31780) et <strong class="text-ivoire font-normal">Toulouse (31000)</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTEFEUILLE OFFICIEL -->
+  <section id="portefeuille" class="py-28 px-6 lg:px-10 border-b hairline bg-obsidienne">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7">
+          <p class="text-[11px] uppercase tracking-[0.3em] text-or mb-4">Sélection &amp; Mandats Actifs</p>
+          <h2 class="font-editorial text-3xl sm:text-5xl font-normal text-ivoire leading-tight">
+            Accédez à l'intégralité de mes biens en temps réel.
+          </h2>
+          <p class="mt-6 text-sm sm:text-base text-brume font-light leading-relaxed max-w-2xl">
+            Maisons de caractère, villas contemporaines, appartements et terrains à bâtir : l'ensemble de mes mandats à la vente et à la location est centralisé sur ma vitrine officielle <strong class="font-medium text-ivoire">Advance Immobilier</strong> avec leurs reportages photographiques complets, diagnostics et barèmes d'honoraires actualisés.
+          </p>
+
+          <div class="mt-9 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <a href="https://www.advance-immobilier.com/contributor/person/wilmar-filliatre" target="_blank" rel="noopener noreferrer" class="btn-luxury px-8 py-4 bg-ivoire text-obsidienne font-medium text-xs uppercase tracking-[0.2em] hover:bg-or hover:text-obsidienne text-center">
+              Consulter mes biens sur Advance Immobilier &rarr;
+            </a>
+            <a href="https://wa.me/33672031712" target="_blank" rel="noopener noreferrer" class="btn-luxury px-7 py-4 border hairline text-ivoire text-xs uppercase tracking-[0.2em] hover:border-or hover:text-or text-center">
+              Échanger sur WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 bg-pierre border hairline p-8 sm:p-10">
+          <div class="flex items-center justify-between pb-5 mb-6 border-b hairline">
+            <span class="text-[10px] uppercase tracking-[0.25em] text-or">Garanties de diffusion</span>
+            <span class="text-[10px] uppercase tracking-[0.2em] text-brume">82 &amp; 31</span>
+          </div>
+          <ul class="space-y-5 text-sm text-brume font-light">
+            <li class="flex items-start gap-3.5">
+              <span class="text-or mt-0.5">&mdash;</span>
+              <span><strong class="text-ivoire font-normal">Force du réseau leader :</strong> Advance Immobilier, agence n°1 en volume de ventes sur Toulouse et 50 km autour (Top 100 Immobilier Excellence 2026).</span>
+            </li>
+            <li class="flex items-start gap-3.5">
+              <span class="text-or mt-0.5">&mdash;</span>
+              <span><strong class="text-ivoire font-normal">Partage inter-agences AMANDA :</strong> diffusion simultanée auprès des professionnels partenaires sur la Haute-Garonne (31) et le Tarn-et-Garonne (82).</span>
+            </li>
+            <li class="flex items-start gap-3.5">
+              <span class="text-or mt-0.5">&mdash;</span>
+              <span><strong class="text-ivoire font-normal">Clarté des honoraires :</strong> barèmes détaillés sur chaque fiche annonce.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- AVIS DE VALEUR SUR PLACE -->
   <section id="estimation" class="py-28 px-6 lg:px-10 border-b hairline bg-pierre">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-14 items-start reveal">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-14 items-start">
       <div class="lg:col-span-5">
         <p class="text-[11px] uppercase tracking-[0.3em] text-or mb-4">Étude patrimoniale confidentielle</p>
         <h2 class="font-editorial text-3xl sm:text-5xl font-normal text-ivoire leading-tight">
@@ -754,7 +743,7 @@
 
   <!-- PARTENAIRE FINANCEMENT (DOROTHÉE GUIMBART) -->
   <section id="financement" class="py-24 px-6 lg:px-10 border-b hairline bg-obsidienne">
-    <div class="max-w-6xl mx-auto reveal">
+    <div class="max-w-6xl mx-auto">
       <div class="bg-pierre border hairline-gold p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         <div class="lg:col-span-7">
           <p class="text-[11px] uppercase tracking-[0.3em] text-or mb-3">Accompagnement Acquéreurs &bull; Simulation &amp; Prêt Immobilier</p>
@@ -793,7 +782,7 @@
 
   <!-- PROGRAMME APPORTEUR D'AFFAIRES -->
   <section id="apporteur" class="py-28 px-6 lg:px-10 border-b hairline bg-pierre">
-    <div class="max-w-6xl mx-auto reveal">
+    <div class="max-w-6xl mx-auto">
       <div class="max-w-3xl mb-16">
         <p class="text-[11px] uppercase tracking-[0.3em] text-or mb-4">Cercle de recommandation</p>
         <h2 class="font-editorial text-3xl sm:text-5xl font-normal text-ivoire leading-tight">
@@ -1020,16 +1009,6 @@
       };
     }
     detoureFondNoirLogo();
-
-    // Animation d'apparition au défilement
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
     // Chargement des avis Google depuis avis_google.json avec secours intégré
     const avisSecours = [
