@@ -3,19 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    (function () {
+      var host = window.location.hostname;
+      if (host.indexOf('github.io') !== -1) {
+        var m = document.createElement('meta');
+        m.name = 'robots';
+        m.content = 'noindex, follow';
+        document.head.appendChild(m);
+        window.location.replace('https://wilmar-filliatre.fr/' + window.location.search + window.location.hash);
+      }
+    })();
+  </script>
   <title>Wilmar Filliatre — Advance Immobilier | Fabas, Montauban, Fronton &amp; Nord Toulousain (82 &amp; 31)</title>
-  <meta name="description" content="Wilmar Filliatre, Agent Commercial en Immobilier (EI) — Advance Immobilier. Estimation, vente et achat à Fabas, Grisolles, Montauban, Bressols, Montech (82), Fronton, Bouloc, Grenade, Castelnau-d'Estrétefonds, Villemur-sur-Tarn et Toulouse (31)." />
+  <meta name="description" content="Conseiller immobilier à Fabas (82) et Nord Toulousain (31). Estimation sur place, vente et achat de maisons et terrains à Montauban, Fronton, Fenouillet, Montech et Grisolles." />
   <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content="Y6Zv5T_F_Ahdk9fZzptwKYVtAgkZOFZ1aZnngQchVyw" />
   <link rel="canonical" href="https://wilmar-filliatre.fr/" />
-  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="https://wilmar-filliatre.fr/logo.png" />
+  <link rel="apple-touch-icon" href="https://wilmar-filliatre.fr/logo.png" />
 
   <meta property="og:url" content="https://wilmar-filliatre.fr/" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:site_name" content="Wilmar Filliatre — Advance Immobilier" />
-  <meta property="og:title" content="Wilmar Filliatre — Advance Immobilier (82 &amp; 31)" />
-  <meta property="og:description" content="Découvrez mes biens sur Advance Immobilier, consultez les avis clients Google (5,0/5), demandez un avis de valeur sur place (Fabas, Montauban, Fronton, Toulouse) ou devenez apporteur d'affaires." />
+  <meta property="og:title" content="Wilmar Filliatre — Advance Immobilier | Fabas, Montauban &amp; Nord Toulousain" />
+  <meta property="og:description" content="Conseiller immobilier à Fabas (82) et Nord Toulousain (31). Estimation sur place, vente, accompagnement achat, avis Google (5,0/5) et programme apporteur d'affaires." />
   <meta property="og:image" content="https://wilmar-filliatre.fr/logo.png" />
 
   <script type="application/ld+json">
