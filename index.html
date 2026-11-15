@@ -160,11 +160,6 @@
     .hairline-gold {
       border-color: rgba(197, 155, 75, 0.35);
     }
-    /* Rend le fond noir pur du logo totalement transparent sur fond sombre */
-    .logo-transparent {
-      mix-blend-mode: screen;
-      filter: contrast(1.15);
-    }
     .hero-backdrop {
       background-image:
         linear-gradient(180deg, rgba(11, 13, 16, 0.72) 0%, rgba(11, 13, 16, 0.80) 55%, #0B0D10 100%),
@@ -214,7 +209,7 @@
   <header class="fixed top-0 inset-x-0 z-50 bg-obsidienne/85 backdrop-blur-xl border-b hairline">
     <div class="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
       <a href="#" class="flex items-center gap-3.5 group" aria-label="Accueil Wilmar Filliatre">
-        <img src="logo.png" alt="Logo Wilmar Filliatre" class="h-12 w-auto object-contain logo-transparent" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+        <img src="logo.png" alt="Logo Wilmar Filliatre" class="h-12 w-auto object-contain logo-detoure" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
         <div class="hidden flex items-center gap-3.5">
           <svg class="w-11 h-7 text-ivoire group-hover:text-or transition duration-500" viewBox="0 0 120 52" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6 42L44 10L68 30L92 14L114 42" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -282,7 +277,7 @@
 
     <div class="max-w-7xl w-full mx-auto pt-8 border-t hairline flex flex-col sm:flex-row items-center justify-between gap-6">
       <div class="flex items-center gap-3.5">
-        <img src="logo.png" alt="Logo Wilmar Filliatre" class="h-14 w-auto object-contain logo-transparent" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+        <img src="logo.png" alt="Logo Wilmar Filliatre" class="h-14 w-auto object-contain logo-detoure" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
         <div class="hidden flex items-center gap-3.5">
           <svg class="w-10 h-6 text-ivoire" viewBox="0 0 120 52" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6 42L44 10L68 30L92 14L114 42" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -308,7 +303,7 @@
     </div>
   </section>
 
-  <!-- ENCART À PROPOS (JUSTE APRÈS LE BANDEAU D'ACCUEIL ET AVANT ANCRAGE TERRITORIAL) -->
+  <!-- ENCART À PROPOS -->
   <section id="a-propos" class="py-28 px-6 lg:px-10 border-b hairline bg-pierre">
     <div class="max-w-6xl mx-auto reveal">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -323,7 +318,7 @@
                 onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');"
               />
               <div class="hidden w-full h-full flex flex-col items-center justify-center p-8 text-center border hairline">
-                <img src="logo.png" alt="Logo Wilmar Filliatre" class="h-16 w-auto object-contain logo-transparent mb-4" />
+                <img src="logo.png" alt="Logo Wilmar Filliatre" class="h-16 w-auto object-contain logo-detoure mb-4" />
                 <p class="font-editorial text-2xl text-ivoire">Wilmar Filliatre</p>
                 <p class="text-[10px] uppercase tracking-[0.25em] text-or mt-2">Ajoutez votre photo : photo-wilmar.jpg</p>
               </div>
@@ -455,7 +450,7 @@
             <span class="text-[10px] uppercase tracking-[0.22em] text-or">Axes Fabas &bull; Montauban &bull; Garonne</span>
           </div>
           <p class="text-sm text-brume font-light leading-relaxed">
-            Estimation immobilière, vente de maisons, villas et terrains sur <strong class="text-ivoire font-normal">Fabas (82170)</strong>, <strong class="text-ivoire font-normal">Grisolles (82170)</strong>, <strong class="text-ivoire font-normal">Canals (82170)</strong>, <strong class="text-ivoire font-normal">Bessens (82170)</strong>, Pompignan (82170), Dieupentale (82170), Monbéqui (82170), <strong class="text-ivoire font-normal">Montauban (82000)</strong>, <strong class="text-ivoire font-normal">Bressols (82710)</strong>, <strong class="text-ivoire font-normal">Montech (82700)</strong>, Finhan (82700), Montbartier (82700), Verdun-sur-Garonne (82600), Aucamville (82600), Labastide-Saint-Pierre (82370), Campsas (82370), Nohic (82370), Orgueil (82370) et Reyniès (82370).
+            Accompagnement achat et vente sur <strong class="text-ivoire font-normal">Fabas (82170)</strong>, <strong class="text-ivoire font-normal">Grisolles (82170)</strong>, <strong class="text-ivoire font-normal">Canals (82170)</strong>, <strong class="text-ivoire font-normal">Bessens (82170)</strong>, Pompignan (82170), Dieupentale (82170), Monbéqui (82170), <strong class="text-ivoire font-normal">Montauban (82000)</strong>, <strong class="text-ivoire font-normal">Bressols (82710)</strong>, <strong class="text-ivoire font-normal">Montech (82700)</strong>, Finhan (82700), Montbartier (82700), Verdun-sur-Garonne (82600), Aucamville (82600), Labastide-Saint-Pierre (82370), Campsas (82370), Nohic (82370), Orgueil (82370) et Reyniès (82370).
           </p>
         </div>
 
@@ -788,7 +783,7 @@
 
       <div class="pt-10 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-brume">
         <div class="flex items-center gap-3.5">
-          <img src="logo.png" alt="Logo Wilmar Filliatre" class="h-12 w-auto object-contain logo-transparent" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
+          <img src="logo.png" alt="Logo Wilmar Filliatre" class="h-12 w-auto object-contain logo-detoure" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
           <div class="hidden flex items-center gap-3.5">
             <svg class="w-10 h-6 text-ivoire" viewBox="0 0 120 52" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M6 42L44 10L68 30L92 14L114 42" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -813,6 +808,43 @@
 
   <script>
     document.getElementById('annee').textContent = new Date().getFullYear();
+
+    // Détourage automatique du fond noir/gris foncé du logo en vraie transparence PNG
+    function detoureFondNoirLogo() {
+      const logos = document.querySelectorAll('.logo-detoure');
+      if (!logos.length) return;
+      const source = new Image();
+      source.src = 'logo.png';
+      source.onload = function () {
+        try {
+          const canvas = document.createElement('canvas');
+          canvas.width = source.naturalWidth;
+          canvas.height = source.naturalHeight;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(source, 0, 0);
+          const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+          const data = imgData.data;
+
+          for (let i = 0; i < data.length; i += 4) {
+            const r = data[i];
+            const g = data[i + 1];
+            const b = data[i + 2];
+            const lum = (r + g + b) / 3;
+            if (lum < 55) {
+              data[i + 3] = 0;
+            } else if (lum < 145) {
+              data[i + 3] = Math.round(((lum - 55) / 90) * 255);
+            }
+          }
+          ctx.putImageData(imgData, 0, 0);
+          const pngTransparent = canvas.toDataURL('image/png');
+          logos.forEach((img) => {
+            img.src = pngTransparent;
+          });
+        } catch (e) {}
+      };
+    }
+    detoureFondNoirLogo();
 
     // Animation d'apparition au défilement
     const observer = new IntersectionObserver((entries) => {
