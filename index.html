@@ -132,6 +132,11 @@
   }
   </script>
 
+  <!-- OPTIMISATION DE VITESSE : PRÉCONNEXIONS & PRÉCHARGEMENT -->
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -213,8 +218,8 @@
 </head>
 <body class="selection:bg-or selection:text-obsidienne">
 
-  <!-- NAVIGATION ÉPURÉE AVEC LOGO FOND TRANSPARENT -->
-  <header class="fixed top-0 inset-x-0 z-50 bg-obsidienne/85 backdrop-blur-xl border-b hairline">
+  <!-- NAVIGATION ÉPURÉE DESKTOP + MENU MOBILE DÉROULANT -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-obsidienne/90 backdrop-blur-xl border-b hairline">
     <div class="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
       <a href="#" class="flex items-center gap-3.5 group" aria-label="Accueil Wilmar Filliatre">
         <img src="logo.png" alt="Logo Wilmar Filliatre" class="h-12 w-auto object-contain logo-detoure" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden');" />
@@ -234,22 +239,62 @@
         </div>
       </a>
 
-      <nav class="hidden lg:flex items-center gap-6 text-[11px] uppercase tracking-[0.2em] text-brume">
+      <!-- MENU DESKTOP AÉRÉ -->
+      <nav class="hidden lg:flex items-center gap-7 text-[11px] uppercase tracking-[0.2em] text-brume">
         <a href="#a-propos" class="hover:text-ivoire transition">À propos</a>
         <a href="#realisations" class="hover:text-ivoire transition">Réalisations</a>
-        <a href="#secteurs" class="hover:text-ivoire transition">Secteurs 82 &amp; 31</a>
-        <a href="#portefeuille" class="hover:text-ivoire transition">Portefeuille</a>
+        <a href="#portefeuille" class="hover:text-ivoire transition">Biens &amp; Secteurs</a>
         <a href="#estimation" class="hover:text-ivoire transition">Avis de valeur</a>
-        <a href="#financement" class="hover:text-ivoire transition">Financement</a>
         <a href="#apporteur" class="hover:text-ivoire transition">Apporteur d'affaires</a>
         <a href="#avis-google" class="hover:text-ivoire transition">Avis Google</a>
       </nav>
 
-      <div class="flex items-center gap-5">
+      <!-- ACTIONS DESKTOP + BOUTON MENU MOBILE -->
+      <div class="flex items-center gap-3 sm:gap-5">
         <a href="tel:+33672031712" class="hidden sm:inline-block text-xs tracking-[0.14em] text-brume hover:text-or transition">
           06 72 03 17 12
         </a>
-        <a href="#contact" class="btn-luxury px-5 py-2.5 border hairline-gold text-or text-[11px] uppercase tracking-[0.2em] hover:bg-or hover:text-obsidienne">
+        <a href="#contact" class="hidden sm:inline-block btn-luxury px-5 py-2.5 border hairline-gold text-or text-[11px] uppercase tracking-[0.2em] hover:bg-or hover:text-obsidienne">
+          Contact privé
+        </a>
+
+        <button
+          type="button"
+          id="btn-menu-mobile"
+          aria-expanded="false"
+          aria-controls="menu-mobile"
+          aria-label="Ouvrir le menu de navigation"
+          class="lg:hidden flex items-center gap-2 px-3.5 py-2 border hairline-gold text-or text-[11px] uppercase tracking-[0.2em] hover:bg-or hover:text-obsidienne transition cursor-pointer"
+        >
+          <span id="label-menu-mobile">Menu</span>
+          <svg id="icone-menu-ouvrir" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+          <svg id="icone-menu-fermer" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- PANNEAU DÉROULANT MOBILE -->
+    <div id="menu-mobile" class="hidden lg:hidden bg-pierre/98 backdrop-blur-xl border-b hairline-gold px-6 py-7">
+      <nav class="flex flex-col space-y-4 text-xs uppercase tracking-[0.22em] text-ivoire">
+        <a href="#a-propos" class="lien-mobile py-1.5 border-b hairline hover:text-or transition">À propos</a>
+        <a href="#realisations" class="lien-mobile py-1.5 border-b hairline hover:text-or transition">Réalisations</a>
+        <a href="#secteurs" class="lien-mobile py-1.5 border-b hairline hover:text-or transition">Secteurs 82 &amp; 31</a>
+        <a href="#portefeuille" class="lien-mobile py-1.5 border-b hairline hover:text-or transition">Portefeuille Advance</a>
+        <a href="#estimation" class="lien-mobile py-1.5 border-b hairline text-or font-medium">Avis de valeur sur place</a>
+        <a href="#financement" class="lien-mobile py-1.5 border-b hairline hover:text-or transition">Financement</a>
+        <a href="#apporteur" class="lien-mobile py-1.5 border-b hairline hover:text-or transition">Apporteur d'affaires</a>
+        <a href="#avis-google" class="lien-mobile py-1.5 border-b hairline hover:text-or transition">Avis Google (5,0 &#9733;)</a>
+      </nav>
+
+      <div class="mt-6 grid grid-cols-2 gap-3">
+        <a href="tel:+33672031712" class="py-3 bg-or text-obsidienne font-medium text-[11px] uppercase tracking-[0.18em] text-center">
+          06 72 03 17 12
+        </a>
+        <a href="#contact" class="lien-mobile py-3 border hairline-gold text-or text-[11px] uppercase tracking-[0.18em] text-center">
           Contact privé
         </a>
       </div>
@@ -410,7 +455,7 @@
     </div>
   </section>
 
-  <!-- RÉALISATIONS & ACCOMPAGNEMENTS PASSÉS (CONFIDENTIELS, SANS PHOTOS) -->
+  <!-- RÉALISATIONS & ACCOMPAGNEMENTS PASSÉS -->
   <section id="realisations" class="py-28 px-6 lg:px-10 border-b hairline bg-obsidienne">
     <div class="max-w-6xl mx-auto">
       <div class="max-w-3xl mb-14">
@@ -704,7 +749,6 @@
           </p>
         </div>
 
-        <!-- ACCÈS PROFIL & ÉVALUATION REALADVISOR -->
         <div class="mt-6 p-7 bg-obsidienne border hairline">
           <p class="text-[10px] uppercase tracking-[0.24em] text-or mb-2">Première approche en ligne</p>
           <p class="font-editorial text-xl text-ivoire mb-2">Profil &amp; estimation via RealAdvisor</p>
@@ -817,7 +861,7 @@
     </div>
   </section>
 
-  <!-- PROGRAMME APPORTEUR D'AFFAIRES (FORMULAIRE SERVEUR) -->
+  <!-- PROGRAMME APPORTEUR D'AFFAIRES -->
   <section id="apporteur" class="py-28 px-6 lg:px-10 border-b hairline bg-pierre">
     <div class="max-w-6xl mx-auto">
       <div class="max-w-3xl mb-16">
@@ -932,7 +976,7 @@
     </div>
   </section>
 
-  <!-- RUBAN DÉFILANT DES 8 AVIS GOOGLE MY BUSINESS EN BAS DE PAGE -->
+  <!-- RUBAN DÉFILANT DES AVIS GOOGLE MY BUSINESS -->
   <section id="avis-google" class="py-20 border-b hairline bg-obsidienne overflow-hidden">
     <div class="max-w-6xl mx-auto px-6 lg:px-10 mb-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
       <div>
@@ -960,7 +1004,7 @@
     </div>
   </section>
 
-  <!-- LIGNE DIRECTE & PIED DE PAGE AVEC DONNÉES LÉGALES & LIENS ADVANCE IMMOBILIER -->
+  <!-- LIGNE DIRECTE & PIED DE PAGE -->
   <footer id="contact" class="bg-pierre pt-24 pb-12 px-6 lg:px-10">
     <div class="max-w-6xl mx-auto">
       <div class="flex flex-col lg:flex-row lg:items-end justify-between pb-16 border-b hairline gap-10">
@@ -1038,7 +1082,7 @@
     </div>
   </footer>
 
-  <!-- MODALE MENTIONS LÉGALES COMPLÈTES (AVEC SIREN, TVA FR02942113499 & LIENS ADVANCE IMMOBILIER) -->
+  <!-- MODALE MENTIONS LÉGALES COMPLÈTES -->
   <div id="modal-mentions" class="hidden fixed inset-0 z-50 bg-obsidienne/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6">
     <div class="bg-pierre border hairline-gold max-w-3xl w-full max-h-[88vh] overflow-y-auto p-7 sm:p-10 relative">
       <button type="button" onclick="document.getElementById('modal-mentions').classList.add('hidden')" class="sticky top-0 float-right px-3.5 py-1.5 bg-obsidienne border hairline text-xs uppercase tracking-[0.2em] text-ivoire hover:border-or hover:text-or cursor-pointer">
@@ -1096,6 +1140,37 @@
 
   <script>
     document.getElementById('annee').textContent = new Date().getFullYear();
+
+    // Gestion du menu mobile déroulant
+    (function () {
+      const btnMenu = document.getElementById('btn-menu-mobile');
+      const menuMobile = document.getElementById('menu-mobile');
+      const labelMenu = document.getElementById('label-menu-mobile');
+      const iconeOuvrir = document.getElementById('icone-menu-ouvrir');
+      const iconeFermer = document.getElementById('icone-menu-fermer');
+      if (!btnMenu || !menuMobile) return;
+
+      function basculerMenu(forcerFermer) {
+        const estOuvert = !menuMobile.classList.contains('hidden');
+        const doitOuvrir = forcerFermer ? false : !estOuvert;
+
+        menuMobile.classList.toggle('hidden', !doitOuvrir);
+        btnMenu.setAttribute('aria-expanded', String(doitOuvrir));
+        labelMenu.textContent = doitOuvrir ? 'Fermer' : 'Menu';
+        iconeOuvrir.classList.toggle('hidden', doitOuvrir);
+        iconeFermer.classList.toggle('hidden', !doitOuvrir);
+      }
+
+      btnMenu.addEventListener('click', function () {
+        basculerMenu(false);
+      });
+
+      document.querySelectorAll('.lien-mobile').forEach(function (lien) {
+        lien.addEventListener('click', function () {
+          basculerMenu(true);
+        });
+      });
+    })();
 
     // Détourage automatique du fond noir/gris foncé du logo en vraie transparence PNG
     function detoureFondNoirLogo() {
